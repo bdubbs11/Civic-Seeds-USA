@@ -20,7 +20,7 @@ function Layout() {
       <Outlet />
     </main>
     
-    <footer>
+    <footer className="text-center p-4">
       <p>Copyright 2025 PA4REAL</p>
     </footer>
 

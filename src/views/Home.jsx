@@ -113,12 +113,65 @@ return (
         </div>
       </div>
 
-      {/* power parenting sections of the month */}
-      <div className="container grid grid-cols-16 min-w-screen mx-auto bg-violet-700 text-white py-10">
-        <div className="col-start-2 col-span-14">
-          <h1 className="text-4xl font-bold mb-4 capitalize my-10"> Power Parenting Sections of the Month</h1>
+      {/* Power Parenting Strategies of the Month */}
+      <section className="w-full bg-violet-700 py-16 px-6">
+        <div className="max-w-5xl mx-auto text-white">
+          <h2 className="text-4xl font-bold capitalize text-center mb-6">
+            Power Parenting Strategies of the Month
+          </h2>
+          <p className="text-lg leading-relaxed text-violet-100 text-center max-w-3xl mx-auto">
+            November’s Civic Seed encourages families and communities to reflect on what it means to belong—not
+            just to a nation, but to a global community. It’s a time to cultivate gratitude for the freedoms,
+            responsibilities, and shared values that connect us across cultures.
+          </p>
+
+          <div className="grid gap-8 mt-12 md:grid-cols-2">
+            <div className="bg-white rounded-xl shadow-lg p-6 text-violet-700 flex flex-col">
+              <h3 className="text-2xl font-bold mb-4">Learning Goals</h3>
+              <ul className="text-left list-disc list-inside space-y-2 text-violet-600">
+                <li>Understand what it means to be a global citizen.</li>
+                <li>Recognize shared human values and responsibilities.</li>
+                <li>Practice gratitude as a civic habit that builds empathy and understanding.</li>
+                <li>Explore how giving thanks can lead to giving back.</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 text-violet-700 flex flex-col">
+              <h3 className="text-2xl font-bold mb-4">Discussion Prompts</h3>
+              <ul className="text-left list-disc list-inside space-y-2 text-violet-600">
+                <li>What are you thankful for in your community or country?</li>
+                <li>How can small acts of kindness make a difference globally?</li>
+                <li>What responsibilities do we have to others beyond our borders?</li>
+                <li>How can gratitude make us better citizens?</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6 text-violet-700 flex flex-col md:col-span-2">
+              <h3 className="text-2xl font-bold mb-4">Family & Classroom Activities</h3>
+              <ul className="text-left list-disc list-inside space-y-3 text-violet-600">
+                <li>
+                  <span className="font-semibold">Gratitude Wall:</span> Write one thing you’re thankful for in your
+                  community and one from another culture.
+                </li>
+                <li>
+                  <span className="font-semibold">Global Dinner Night:</span> Try food from another country and learn
+                  about their civic traditions.
+                </li>
+                <li>
+                  <span className="font-semibold">Thank You Notes:</span> Send appreciation to community helpers like
+                  teachers or volunteers.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <blockquote className="italic text-xl text-center text-violet-100 mt-12">
+            “The best way to find yourself is to lose yourself in the service of others.”
+            <br /> <span className="font-semibold not-italic">— Mahatma Gandhi</span>
+          </blockquote>
         </div>
-      </div>
+      </section>
+
     </div>
 )
 }
