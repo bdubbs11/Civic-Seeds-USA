@@ -11,7 +11,7 @@ function Layout() {
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/power-parenting-strategies">Power Parenting Strategies</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/schedule-services">Schedule Services</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/parenting-tools">Parenting Tools and Resources</Link>
-          <Link className="hover:text-violet-700 ease-in-out duration-300" to="/parenting-tools">Shops</Link>
+          <Link className="hover:text-violet-700 ease-in-out duration-300" to="/shops">Shops</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/contact">Contact</Link>
         </div>
       </nav>

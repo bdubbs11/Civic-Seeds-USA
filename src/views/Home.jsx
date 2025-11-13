@@ -44,7 +44,7 @@ return (
       {/* Work with section */}
       <div className="container grid grid-cols-16 min-w-screen mx-auto">
         <div className="col-start-2 col-span-14">
-        <h1 className="text-4xl font-bold mb-4 text-black capitalize my-10"> Working with Deitra Scott</h1>
+        <h1 className="text-4xl font-bold mb-4 text-black capitalize my-10"> Working with Deitra</h1>
           <div className="flex flex-row justify-center items-center py-10 gap-5">
 
             <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
@@ -66,7 +66,7 @@ return (
         </div>
       </div>
       {/* Quote Section */}
-      <div className="w-full bg-violet-700 text-white py-16 px-8 m-10">
+      <div className="w-full bg-violet-700 text-white py-12 px-8 mt-12">
         <div className="max-w-5xl mx-auto flex items-center justify-center text-center">
           <h2 className="text-4xl font-bold italic leading-relaxed">
             “History has shown us that courage can be contagious, and hope can take on a life of its own.”
@@ -77,34 +77,78 @@ return (
 
       {/* civic seeds section section */}
 
-      <div className="container grid grid-cols-16 min-w-screen mx-auto min-h-screen">
+      <div className="container grid grid-cols-16 min-w-screen mx-auto py-12">
         <div className="col-start-2 col-span-14">
-          <h1 className="text-4xl font-bold mb-4 text-black capitalize my-10"> Civic Seeds</h1>
+          <h1 className="text-4xl font-bold mb-4 text-black capitalize "> Civic Seeds</h1>
 
 
-          <div className="grid md:grid-cols-2 gap-10 py-10">
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-              <h2 className="text-2xl font-bold text-violet-700 mb-4">Why Civics Matter</h2>
-              <p className="text-gray-600 mb-4">Explore the roots of democracy, why community matters, and how division and unity shape our nation.</p>
-              <button className="bg-violet-700 text-white px-4 py-2 rounded-full hover:bg-violet-800">Learn More</button>
+          <div className="grid md:grid-cols-2 gap-8 py-8">
+            <div className="bg-violet-700 rounded-xl text-white p-6 flex flex-col gap-4">
+              <img
+                src="/public/images/vote.jpg"
+                alt="Why Civics Matter"
+                className="w-full h-60 object-cover rounded-lg"
+              />
+              <div className="space-y-4 flex-1">
+                <h2 className="text-2xl font-bold">Why Civics Matter</h2>
+                <p className="text-sm md:text-base leading-relaxed">
+                  Explore the roots of democracy, why community matters, and how division and unity shape our nation.
+                </p>
+              </div>
+              <button className="bg-white text-black px-8 py-2 rounded-full mx-auto hover:bg-slate-100 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                Learn More
+              </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-              <h2 className="text-2xl font-bold text-violet-700 mb-4">Power Parenting</h2>
-              <p className="text-gray-600 mb-4">Explore the roots of democracy, why community matters, and how division and unity shape our nation.</p>
-              <button className="bg-violet-700 text-white px-4 py-2 rounded-full hover:bg-violet-800">Learn More</button>
+            <div className="bg-violet-700 rounded-xl text-white p-6 flex flex-col gap-4">
+              <img
+                src="/public/images/hay.jpg"
+                alt="Power Parenting"
+                className="w-full h-60 object-cover object-top rounded-lg"
+              />
+              <div className="space-y-4 flex-1">
+                <h2 className="text-2xl font-bold">Power Parenting</h2>
+                <p className="text-sm md:text-base leading-relaxed">
+                  Explore the roots of democracy, why community matters, and how division and unity shape our nation.
+                </p>
+              </div>
+              <button className="bg-white text-black px-8 py-2 rounded-full mx-auto hover:bg-slate-100 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                Learn More
+              </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-              <h2 className="text-2xl font-bold text-violet-700 mb-4">Democracy for Kids</h2>
-              <p className="text-gray-600 mb-4">Explore the roots of democracy, why community matters, and how division and unity shape our nation.</p>
-              <button className="bg-violet-700 text-white px-4 py-2 rounded-full hover:bg-violet-800">Learn More</button>
+            <div className="bg-violet-700 rounded-xl text-white p-6 flex flex-col gap-4">
+              <img
+                src="/public/images/kidblm.jpg"
+                alt="Democracy for Kids"
+                className="w-full h-60 object-cover rounded-lg"
+              />
+              <div className="space-y-4 flex-1">
+                <h2 className="text-2xl font-bold">Democracy for Kids</h2>
+                <p className="text-sm md:text-base leading-relaxed">
+                  Explore the roots of democracy, why community matters, and how division and unity shape our nation.
+                </p>
+              </div>
+              <button className="bg-white text-black px-8 py-2 rounded-full mx-auto hover:bg-slate-100 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                Learn More
+              </button>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition">
-              <h2 className="text-2xl font-bold text-violet-700 mb-4">Act Together</h2>
-              <p className="text-gray-600 mb-4">Explore the roots of democracy, why community matters, and how division and unity shape our nation.</p>
-              <button className="bg-violet-700 text-white px-4 py-2 rounded-full hover:bg-violet-800">Learn More</button>
+            <div className="bg-violet-700 rounded-xl text-white p-6 flex flex-col gap-4">
+              <img
+                src="/public/images/together.jpg"
+                alt="Act Together"
+                className="w-full h-60 object-cover rounded-lg"
+              />
+              <div className="space-y-4 flex-1">
+                <h2 className="text-2xl font-bold">Act Together</h2>
+                <p className="text-sm md:text-base leading-relaxed">
+                  Explore the roots of democracy, why community matters, and how division and unity shape our nation.
+                </p>
+              </div>
+              <button className="bg-white text-black px-8 py-2 rounded-full mx-auto hover:bg-slate-100 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                Learn More
+              </button>
             </div>
             {/* repeat for other three cards */}
           </div>
