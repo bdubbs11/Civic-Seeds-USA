@@ -12,7 +12,7 @@ function Contact() {
               <h2 className="text-4xl md:text-5xl font-serif font-bold text-violet-900 mb-4">Get in Touch</h2>
               <p className="text-lg text-violet-800 mb-4">I'd like to hear from you!</p>
               <p className="text-sm text-gray-600 leading-relaxed">
-                If you have any inquiries or just want to say hi, please use the contact form!
+              Join our mailing list to receive your Parents’ Guide as soon as it’s available, and to get info on workshops and webinars!
               </p>
             </div>
 

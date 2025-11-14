@@ -3,7 +3,8 @@ import React from 'react';
 function Shops() {
   return (
     <div>
-      <h1>Shops</h1>
+      <h1>Buy the full guide</h1>
+      
     </div>
   )
 }

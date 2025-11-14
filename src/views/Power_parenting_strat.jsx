@@ -2,14 +2,27 @@ import React from 'react';
 
 function PowerParentingStrategy() {
   return (
-    <div className="flex flex-col min-h-screen justify-center items-center">
-      <div className="container grid grid-cols-16 min-w-screen mx-auto">
+
+    
+    <div className="flex flex-col">
+      {/* Page Header */}
+      <section className="w-full bg-blue-500 text-white py-20 px-4">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">Power Parenting Strategies</h1>
+          <p className="text-lg md:text-xl text-violet-100 max-w-3xl mx-auto">
+          Curated educational tools, justice resources, and family-friendly learning guides.
+          </p>
+        </div>
+      </section>
+      <div className="container grid grid-cols-16 min-w-screen mx-auto min-h-screen">
+
+        
         <div className="col-start-2 col-span-14">  
-          <div className="flex flex-row justify-center items-center">
-            <div className="w-1/2 p-6">
-              <img src="/public/images/hay.jpg" alt="Power Parenting" className="rounded-lg" />
+          <div className="flex flex-row justify-center items-center min-h-screen gap-8">
+            <div className="w-1/2 pl-0 pr-4">
+              <img src="/public/images/hay.jpg" alt="Power Parenting" className="rounded-lg w-full h-auto" />
             </div>
-            <div className="w-1/2 p-6">
+            <div className="w-1/2 pl-4 pr-0 flex flex-col justify-center">
               <h1 className="text-2xl font-bold mb-4 text-black capitalize text-left mb-10">Power Parenting Strategies</h1>
               <p className="text-sm md:text-base leading-relaxed text-left">
                 Power Parenting is about raising children who are confident, kind, and capable of thinking for themselves.
@@ -21,16 +34,84 @@ function PowerParentingStrategy() {
           </div>
         </div>
       </div>
+    
+      <div className="container grid grid-cols-16 min-w-screen mx-auto bg-blue-500 min-h-screen">
+        <div className="col-start-2 col-span-14 flex flex-col justify-center py-16">
+          <h1 className="text-3xl font-bold mb-4 text-white capitalize text-center mb-10">Our Core Strategies</h1>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl text-blue-500 p-6 flex flex-col gap-4">
+                <div className="space-y-4 flex-1">
+                  <h2 className="text-2xl font-bold">Character and Core Values</h2>
+                  <p className="text-sm md:text-base leading-relaxed">
+                   <ul>
+                    <li>Family Values</li>
+                    <li>Rules vs. Principles</li>
+                    <li>Faith and Hope</li>
+                    <li>Cheer for Them / Acceptance</li>
+                   </ul>
+                  </p>
+                </div>
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto hover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                  Learn More
+                </button>
+              </div>
 
-      <div className="container grid grid-cols-16 min-w-screen mx-auto bg-blue-500">
-        <div className="col-start-2 col-span-14">
-          <h1 className="text-2xl font-bold mb-4 text-black capitalize text-center mb-10">Core Strategies</h1>
+              <div className="bg-white rounded-xl text-blue-500 p-6 flex flex-col gap-4">
+                <div className="space-y-4 flex-1">
+                  <h2 className="text-2xl font-bold">Thinking Skills & Curiosity</h2>
+                  <p className="text-sm md:text-base leading-relaxed">
+                  <ul>
+                    <li>Encourage Curiosity</li>
+                    <li>Cause and Effect</li>
+                    <li>Critical Thinking</li>
+                    <li>Media Literacy</li>
+                  </ul>
+                  </p>
+                </div>
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto hover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                  Learn More
+                </button>
+              </div>
 
+              <div className="bg-white rounded-xl text-blue-500 p-6 flex flex-col gap-4">
+                <div className="space-y-4 flex-1">
+                  <h2 className="text-2xl font-bold">Connection & Communication</h2>
+                  <p className="text-sm md:text-base leading-relaxed">
+                  <ul>
+                    <li>Family Meetings</li>
+                    <li>Disagreeing Appropriately: Make Your Case</li>
+                    <li>Relationship Repair</li>
+                    <li>Self-Love, Self-Regulation, Self-Care</li>
+                  </ul>
+                  </p>
+                </div>
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto hover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                  Learn More
+                </button>
+              </div>
 
+              <div className="bg-white rounded-xl text-blue-500 p-6 flex flex-col gap-4">
+                <div className="space-y-4 flex-1">
+                  <h2 className="text-2xl font-bold">Capability & Responsibility</h2>
+                  <p className="text-sm md:text-base leading-relaxed">
+                  <ul>
+                    <li>Roles and Responsibilities</li>
+                    <li>Rewards and Consequences</li>
+                    <li>Teaching Leadership</li>
+                    <li>Encourage Expertise</li>
+                  </ul>
+                  </p>
+                </div>
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto hover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                  Learn More
+                </button>
+              </div>
+            </div>
+          </div>
         </div>  
       </div>
-    </div>
-  )
+  );
 }
 
 export default PowerParentingStrategy;
