@@ -9,11 +9,19 @@ function PowerParentingStrategy() {
       <section className="w-full bg-blue-500 text-white py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Power Parenting Strategies</h1>
-          <p className="text-lg md:text-xl text-violet-100 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-white max-w-3xl mx-auto">
           Curated educational tools, justice resources, and family-friendly learning guides.
           </p>
         </div>
       </section>
+      
+      {/* Curve Divider */}
+      <div className="w-full -mt-1">
+        <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' className="w-full h-auto" preserveAspectRatio="none" style={{ transform: 'scaleX(-1)' }}>
+          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#2B7FFF'></path>
+        </svg>
+      </div>
+
       <div className="container grid grid-cols-16 min-w-screen mx-auto min-h-screen">
 
         
@@ -34,7 +42,13 @@ function PowerParentingStrategy() {
           </div>
         </div>
       </div>
-    
+
+      
+      <div className="w-full -mt-1">
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' className="w-full h-auto" preserveAspectRatio="none" style={{ transform: 'scaleY(-1)' }}>
+          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#2B7FFF'></path>
+        </svg>
+      </div>
       <div className="container grid grid-cols-16 min-w-screen mx-auto bg-blue-500 min-h-screen">
         <div className="col-start-2 col-span-14 flex flex-col justify-center py-16">
           <h1 className="text-3xl font-bold mb-4 text-white capitalize text-center mb-10">Our Core Strategies</h1>

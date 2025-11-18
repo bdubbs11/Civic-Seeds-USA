@@ -26,72 +26,80 @@ function ScheduleServices() {
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Coaching Session */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
-              <h2 className="text-2xl font-bold text-violet-900 mb-3">Coaching Session</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                One-on-one coaching to help you strengthen your parenting foundation and build powerful lifelong skills.
-              </p>
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-violet-700">Duration: </span>
-                <span className="text-sm text-gray-600">45 or 60 minutes</span>
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-violet-900 mb-3">Coaching Session</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  One-on-one coaching to help you strengthen your parenting foundation and build powerful lifelong skills.
+                </p>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-violet-700">Duration: </span>
+                  <span className="text-sm text-gray-600">45 or 60 minutes</span>
+                </div>
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300"
+                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
             </div>
 
             {/* Consultation */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
-              <h2 className="text-2xl font-bold text-violet-900 mb-3">Consultation</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                A focused session to explore your goals, challenges, and next steps.
-              </p>
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-violet-700">Duration: </span>
-                <span className="text-sm text-gray-600">30 minutes</span>
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-violet-900 mb-3">Consultation</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  A focused session to explore your goals, challenges, and next steps.
+                </p>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-violet-700">Duration: </span>
+                  <span className="text-sm text-gray-600">30 minutes</span>
+                </div>
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300"
+                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
             </div>
 
             {/* Workshops & Webinars */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100">
-              <h2 className="text-2xl font-bold text-violet-900 mb-3">Workshops & Webinars</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Group learning experiences designed for parents, organizations, and schools.
-              </p>
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-violet-700">Duration: </span>
-                <span className="text-sm text-gray-600">Varies — upcoming dates or custom requests</span>
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-violet-900 mb-3">Workshops & Webinars</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Group learning experiences designed for parents, organizations, and schools.
+                </p>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-violet-700">Duration: </span>
+                  <span className="text-sm text-gray-600">Varies — upcoming dates or custom requests</span>
+                </div>
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300"
+                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
             </div>
 
             {/* Speaking Engagements */}
-            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 md:col-span-2 lg:col-span-1">
-              <h2 className="text-2xl font-bold text-violet-900 mb-3">Speaking Engagements</h2>
-              <p className="text-gray-600 mb-4 leading-relaxed">
-                Invite Deitra to speak at your school, church, or organization.
-              </p>
-              <div className="mb-4">
-                <span className="text-sm font-semibold text-violet-700">Duration: </span>
-                <span className="text-sm text-gray-600">Custom</span>
+            <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 md:col-span-2 lg:col-span-1 flex flex-col">
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-violet-900 mb-3">Speaking Engagements</h2>
+                <p className="text-gray-600 mb-4 leading-relaxed">
+                  Invite Deitra to speak at your school, church, or organization.
+                </p>
+                <div className="mb-4">
+                  <span className="text-sm font-semibold text-violet-700">Duration: </span>
+                  <span className="text-sm text-gray-600">Custom</span>
+                </div>
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300"
+                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 function Home() {
 return (
@@ -46,22 +46,26 @@ return (
         <div className="col-start-2 col-span-14">
         <h1 className="text-4xl font-bold mb-4 text-black capitalize my-10"> Working with Deitra</h1>
           <div className="flex flex-row justify-center items-center py-10 gap-5">
+            <Link to="/schedule-services">  
+              <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
+                <h1 className="text-2xl font-bold mb-4">Coaching</h1>
+                <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
+              </div>
+            </Link>
 
-            <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
-              <h1 className="text-2xl font-bold mb-4">Coaching</h1>
-              <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
-            </div>
+            <Link to="/schedule-services">  
+              <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
+                <h1 className="text-2xl font-bold mb-4">Workshops</h1>
+                <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
+              </div>
+            </Link>
 
-            <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
-              <h1 className="text-2xl font-bold mb-4">Workshops</h1>
-              <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
-            </div>
-
-            <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
-              <h1 className="text-2xl font-bold mb-4">Speaking Engagements</h1>
-              <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
-            </div>
-
+            <Link to="/schedule-services">  
+              <div className="flex flex-col w-full h-full text-center hover:bg-slate-100 p-4 rounded-lg ease-in-out duration-300">
+                <h1 className="text-2xl font-bold mb-4">Speaking Engagements</h1>
+                <p className="text-lg">I help parents create a strong foundation for their children to grow into powerful citizens. I offer one-on-one coaching sessions to help parents develop the skills they need to raise their children to be strong, responsible citizens. </p>
+              </div>
+            </Link>
           </div>
         </div>
       </div>
@@ -77,7 +81,7 @@ return (
 
       {/* civic seeds section section */}
 
-      <div className="container grid grid-cols-16 min-w-screen mx-auto py-12">
+      <div className="container grid grid-cols-16 min-w-screen mx-auto py-12" id="civic-seeds">
         <div className="col-start-2 col-span-14">
           <h1 className="text-4xl font-bold mb-4 text-black capitalize "> Civic Seeds</h1>
 

@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './assets/tailwindcss.css';
 import Layout from './components/Layout';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './views/home';
 import Contact from './views/Contact';
 import PowerParentingStrategy from './views/Power_parenting_strat';
@@ -11,6 +12,7 @@ function App() {
 
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
