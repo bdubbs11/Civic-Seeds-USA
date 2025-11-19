@@ -14,8 +14,8 @@ function ScheduleServices() {
       {/* Page Header */}
       <section className="w-full bg-violet-700 text-white py-20 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Schedule Services</h1>
-          <p className="text-lg md:text-xl text-violet-100 max-w-3xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">Schedule Services</h1>
+          <p className="text-base md:text-xl text-violet-100 max-w-3xl mx-auto">
             Book a coaching session, consultation, workshop, or speaking engagement.
           </p>
         </div>
@@ -24,22 +24,22 @@ function ScheduleServices() {
       {/* Services Section */}
       <section className="w-full bg-white py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {/* Coaching Session */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-violet-900 mb-3">Coaching Session</h2>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <h2 className="text-lg md:text-2xl font-bold text-violet-900 mb-3">Coaching Session</h2>
+                <p className=" text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
                   One-on-one coaching to help you strengthen your parenting foundation and build powerful lifelong skills.
                 </p>
                 <div className="mb-4">
                   <span className="text-sm font-semibold text-violet-700">Duration: </span>
-                  <span className="text-sm text-gray-600">45 or 60 minutes</span>
+                  <span className="text-sm gray-600">45 or 60 minutes</span>
                 </div>
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
+                className="w-1/2 mx-auto bg-violet-700 text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
@@ -48,8 +48,8 @@ function ScheduleServices() {
             {/* Consultation */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-violet-900 mb-3">Consultation</h2>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <h2 className="text-lg md:text-2xl font-bold text-violet-900 mb-3">Consultation</h2>
+                <p className="text-sm md:text-base text-gray-600 mb-4 leading-relaxed">
                   A focused session to explore your goals, challenges, and next steps.
                 </p>
                 <div className="mb-4">
@@ -59,7 +59,7 @@ function ScheduleServices() {
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
+                className="w-1/2 mx-auto bg-violet-700 text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
@@ -68,7 +68,7 @@ function ScheduleServices() {
             {/* Workshops & Webinars */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 flex flex-col">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-violet-900 mb-3">Workshops & Webinars</h2>
+                <h2 className="text-lg md:text-2xl font-bold text-violet-900 mb-3">Workshops & Webinars</h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   Group learning experiences designed for parents, organizations, and schools.
                 </p>
@@ -79,7 +79,7 @@ function ScheduleServices() {
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
+                className="w-1/2 mx-auto bg-violet-700 text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>
@@ -88,7 +88,7 @@ function ScheduleServices() {
             {/* Speaking Engagements */}
             <div className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100 md:col-span-2 lg:col-span-1 flex flex-col">
               <div className="flex-1">
-                <h2 className="text-2xl font-bold text-violet-900 mb-3">Speaking Engagements</h2>
+                <h2 className="text-lg md:text-2xl font-bold text-violet-900 mb-3">Speaking Engagements</h2>
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   Invite Deitra to speak at your school, church, or organization.
                 </p>
@@ -99,7 +99,7 @@ function ScheduleServices() {
               </div>
               <button
                 onClick={scrollToBooking}
-                className="w-full bg-violet-700 text-white px-6 py-3 rounded-full hover:bg-violet-800 transition-colors duration-300 mt-4"
+                className="w-1/2 mx-auto bg-violet-700 text-white px-6 py-3 rounded-full text-sm md:text-base hover:bg-violet-800 transition-colors duration-300 mt-4"
               >
                 Book Now
               </button>

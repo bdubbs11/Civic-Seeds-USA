@@ -1,5 +1,6 @@
 import React from 'react';
 import {Outlet, Link, useLocation, useNavigate} from 'react-router-dom';
+import Footer from './Footer';
 
 function Layout() {
   const location = useLocation();
@@ -28,10 +29,11 @@ function Layout() {
 
   return (
     <div className="flex flex-col text-black"> 
-      <nav className="flex flex-row justify-between items-center p-4 px-6 my-auto w-screen">
-        <Link className="text-2xl hover:text-violet-700 ease-in-out duration-300" to="/">PA4REAL</Link>
-        <div className="flex flex-row gap-4">
-        <a href="/#civic-seeds" onClick={handleCivicSeedsClick} className="hover:text-violet-700 ease-in-out duration-300 cursor-pointer">Civic Seeds</a>
+      <nav className="flex flex-row justify-between items-center p-2 md:p-4 px-3 md:px-6 my-auto w-screen">
+        <Link className=" text-xl md:text-2xl hover:text-violet-700 ease-in-out duration-300" to="/">PA4REAL</Link>
+        {/* this is too long i will need a drop down menu or something for this to be more realistic */}
+        <div className="flex flex-row gap-1 md:gap-4 text-xs md:text-base">
+          <Link href="/#civic-seeds" onClick={handleCivicSeedsClick} className="hover:text-violet-700 ease-in-out duration-300 cursor-pointer">Civic Seeds</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/power-parenting-strategies">Power Parenting Strategies</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/schedule-services">Schedule Services</Link>
           <Link className="hover:text-violet-700 ease-in-out duration-300" to="/parenting-tools">Parenting Tools and Resources</Link>
@@ -44,9 +46,7 @@ function Layout() {
       <Outlet />
     </main>
     
-    <footer className="text-center p-4">
-      <p>Copyright 2025 PA4REAL</p>
-    </footer>
+    <Footer />
 
   </div>
   )
