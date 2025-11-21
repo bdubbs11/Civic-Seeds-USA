@@ -8,6 +8,7 @@ import PowerParentingStrategy from './views/Power_parenting_strat';
 import ScheduleServices from './views/Schedule_services';
 import Shops from './views/Shops';  
 import ParentingTools from './views/Parenting_tools';
+import Cart from './views/Cart';
 function App() {
 
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/schedule-services" element={<ScheduleServices />} />
           <Route path="/parenting-tools" element={<ParentingTools />} />
           <Route path="/shops" element={<Shops />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/contact" element={<Contact />} />
         </Route>
       </Routes>
