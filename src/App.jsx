@@ -16,7 +16,9 @@ function App() {
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/power-parenting-strategies" element={<PowerParentingStrategy />} />
+          <Route path="/power-parenting" element={<PowerParentingStrategy />} />
+          {/* removes poewer parenting strategies to power parenting */}
+          <Route path="/parents-in-action" />
           <Route path="/schedule-services" element={<ScheduleServices />} />
           <Route path="/parenting-tools" element={<ParentingTools />} />
           <Route path="/shops" element={<Shops />} />

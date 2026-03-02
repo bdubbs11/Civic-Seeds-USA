@@ -1,2 +1,11 @@
 @import "tailwindcss";
 
+@theme {
+  @keyframes fade-slide {
+    0% { opacity: 0; transform: translateY(8px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translateY(-8px); }
+  }
+  --animate-fade-slide: fade-slide 2.5s ease-in-out;
+}

@@ -28,7 +28,7 @@ function PowerParentingStrategy() {
         <div className="col-start-2 col-span-14">  
           <div className="flex flex-col md:flex-row justify-center items-center min-h-screen gap-5 md:gap-8">
             <div className="md:w-full md:h-full h-3/4 w-3/4 flex items-start justify-start mt-10 order-1 md:mr-10">
-              <img src="/public/images/hay.jpg" alt="Power Parenting" className="rounded-lg w-full h-auto" />
+              <img src="/images/hay.jpg" alt="Power Parenting" className="rounded-lg w-full h-auto" />
             </div>
             <div className="w-full md:w-full flex flex-col justify-center order-2 px-10 md:px-0 md:ml-10 mb-10">
               <h1 className="text-xl md:text-2xl font-bold mb-4 text-black capitalize text-center md:text-left mb-10">Power Parenting Strategies</h1>

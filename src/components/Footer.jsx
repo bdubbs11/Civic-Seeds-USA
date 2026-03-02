@@ -28,7 +28,7 @@ function Footer() {
   };
 
   return (
-    <footer className="relative bg-white text-black py-10 border-t border-gray-200">
+    <footer className="relative bg-transparent text-black py-10 border-t border-gray-200">
       {/* Content wrapper */}
       <div className="relative z-10 w-11/12 max-w-6xl mx-auto">
         {/* Top Section */}
@@ -87,7 +87,7 @@ function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center border-t border-gray-200 pt-4">
+        <div className="flex flex-col md:flex-row justify-between items-center border-t border-black-200 pt-4">
           {/* Social Media */}
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-violet-700 ease-in-out duration-300">
