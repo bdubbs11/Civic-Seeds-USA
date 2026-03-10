@@ -9,11 +9,12 @@ return (
       <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto ">
         <div className="col-start-2 col-span-14">  
         {/* <h1 className="text-4xl font-bold my-10 text-black -mb-10 capitalize">A Parents guide to growing powerful citizens</h1> */}
-        <div className="flex md:flex-row flex-col justify-center items-center min-h-screen ">
+        <div className="flex md:flex-row flex-col justify-center items-center min-h-screen gap-6 md:gap-10">
+          {/* notes for now. too much space vertically on main home page. doesnt look right at all on bigger screens.  */}
 
-          <div className="flex flex-col w-full h-full px-10 md:px-0 text-center md:text-left md:mr-20 py-12 order-2 md:order-1">
-            <h1 className="text-xl md:text-2xl mb-4 italic ">A Parents guide to growing powerful citizens</h1>
-            <h1 className="text-2xl md:text-4xl font-bold mb-8 leading-[1.2]">
+          <div className="flex flex-col w-full max-w-2xl px-6 md:px-0 text-center md:text-left md:mr-12 py-8 order-2 md:order-1">
+            <h1 className="text-lg md:text-xl mb-2 italic text-gray-700">Raising Powerful Citizens Starts at Home</h1>
+            <h2 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
               Inspiring the next generation to{" "}
               <TextRotator
                 words={[
@@ -26,13 +27,22 @@ return (
                 interval={2500}
                 className="text-violet-700 font-bold"
               />
-            </h1>
-            <p className="text-base md:text-lg mb-6 leading-relaxed">In this book, we share what we've learned as parents striving to raise children who will be strong, responsible citizens—children who help America live up to its ideals. We explore how the power of family, community, democracy, and faith can protect our children, our country, and our future. We've got the POWER!</p>
-            <button className="bg-violet-700 text-white px-2 py-4 rounded-full w-1/2 mt-6 md:mt-12 mx-auto md:mx-0 hover:bg-violet-800 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">Learn More</button>
+            </h2>
+            <div className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700">
+              <p>Every day as parents shape their children, they are shaping the future of our communities, our country, and our democracy.</p>
+              <p>Civic Seeds USA creates educational resources, programs, and family engagement tools that help parents grow powerful citizens by translating civic values into everyday parenting practices.</p> 
+              <p>Civic Seeds’ curricula, workshops, and resources cultivate children with strong character and family values, who have the tools and desire to help their communities and our country flourish.</p>
+              <p>Together we can help families grow the next generation of thoughtful, powerful citizens who have the caring, the courage, and the knowledge to make a difference.</p>
+            </div>
+
+            <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-6">
+              <button className="bg-violet-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap hover:bg-violet-800 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">Explore the Frameworks</button>
+              <button className="bg-violet-700 text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap hover:bg-violet-800 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">Book a Workshop</button>
+            </div>
           </div> 
 
-          <div className="md:w-full md:h-full h-3/4 w-3/4 items-center justify-center mt-10 md:mt-0 md:ml-20 order-1 md:order-2">
-            <img src="/images/home.webp" alt="PA4REAL Logo" className="w-auto h-full w-full object-cover rounded-lg"/>
+          <div className="md:min-w-[320px] md:max-w-md h-64 md:h-auto w-4/5 max-w-sm items-center justify-center mt-4 md:mt-0 md:ml-8 order-1 md:order-2 flex-shrink-0">
+            <img src="/images/home.webp" alt="PA4REAL Logo" className="w-full h-full object-cover rounded-lg"/>
           </div>
           
         </div>
