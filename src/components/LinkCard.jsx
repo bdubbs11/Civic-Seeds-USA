@@ -21,7 +21,7 @@ const cardVariants = {
 /**
  * LinkCard – card with hover animation. Use `to` for internal (React Router) links, `href` for external.
  * @param {string} title
- * @param {string} description
+ * @param {React.ReactNode|string} description
  * @param {string} [to] - React Router path (e.g. "/schedule-services")
  * @param {string} [href] - External URL (opens in new tab)
  * @param {string} [imageUrl] - Optional image URL
@@ -38,7 +38,9 @@ function LinkCard({ title, description, to, href, imageUrl, className = '' }) {
         <h3 className="mb-2 font-serif text-2xl font-semibold tracking-tight text-gray-900">
           {title}
         </h3>
-        <p className="max-w-[90%] text-sm text-gray-600">{description}</p>
+        <div className="max-w-[90%] text-base text-gray-600 space-y-2">
+          {description}
+        </div>
       </div>
       {imageUrl && (
         <div className="absolute bottom-0 right-0 h-40 w-40 translate-x-1/4 translate-y-1/4 transform">
