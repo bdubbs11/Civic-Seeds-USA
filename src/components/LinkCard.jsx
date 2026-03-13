@@ -29,7 +29,7 @@ const cardVariants = {
  */
 function LinkCard({ title, description, to, href, imageUrl, className = '' }) {
   const baseClass =
-    'group relative flex min-h-80 w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl border  p-6 text-left shadow-lg transition-colors hover:border-violet-200 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ' +
+    'group relative flex min-h-80 w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl border p-6 text-left shadow-lg transition-colors bg-lightgreen  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ' +
     className;
 
   const content = (

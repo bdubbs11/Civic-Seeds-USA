@@ -5,8 +5,7 @@ function Contact() {
   return (
     <div className="w-full min-h-screen">
       <ContactSection
-        title="Contact Us"
-        description="We are available for questions, feedback, or collaboration opportunities. Let us know how we can help!"
+        // Reuse the same Stay Connected heading and copy as the Home page
         showContactDetails
         email="hello@pa4real.com"
         web={{ label: 'Civic Seeds', url: '#' }}
