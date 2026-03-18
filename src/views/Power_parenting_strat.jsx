@@ -22,16 +22,18 @@ function PowerParentingStrategy() {
         </svg>
       </div>
 
-      <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto min-h-screen">
+      <div className="container grid grid-cols-1 md:grid-cols-16 mx-auto min-h-screen">
 
         
-        <div className="col-start-2 col-span-14">  
+        <div className="col-span-1 md:col-start-2 md:col-span-14">  
           <div className="flex flex-col md:flex-row justify-center items-center min-h-screen gap-5 md:gap-8">
             <div className="md:w-full md:h-full h-3/4 w-3/4 flex items-start justify-start mt-10 order-1 md:mr-10">
               <img src="/images/hay.jpg" alt="Power Parenting" className="rounded-lg w-full h-auto" />
             </div>
-            <div className="w-full md:w-full flex flex-col justify-center order-2 px-10 md:px-0 md:ml-10 mb-10">
-              <h1 className="text-xl md:text-2xl font-bold mb-4 text-black capitalize text-center md:text-left mb-10">Power Parenting Strategies</h1>
+            <div className="w-full md:w-full flex flex-col justify-center order-2 px-4 sm:px-6 md:px-0 md:ml-10 mb-10">
+              <h1 className="text-xl md:text-2xl font-bold mb-4 text-black capitalize text-center md:text-left mb-10">
+                Power Parenting Strategies
+              </h1>
               <p className="text-base md:text-lg leading-relaxed text-center md:text-left">
                 Power Parenting is about raising children who are confident, kind, and capable of thinking for themselves.
                 It focuses on building strong family connections, nurturing emotional intelligence, and helping kids 
@@ -49,8 +51,8 @@ function PowerParentingStrategy() {
           <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#2B7FFF'></path>
         </svg>
       </div>
-      <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto bg-blue-500 min-h-screen">
-        <div className="md:col-start-2 col-span-14 flex flex-col justify-center py-16 mx-10 md:mx-0">
+      <div className="container grid grid-cols-1 md:grid-cols-16 mx-auto bg-blue-500 min-h-screen">
+        <div className="col-span-1 md:col-start-2 md:col-span-14 flex flex-col justify-center py-16 px-4 md:px-0">
           <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white capitalize text-center mb-10">Our Core Strategies</h1>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-8">
@@ -66,7 +68,7 @@ function PowerParentingStrategy() {
                    </ul>
                   </p>
                 </div>
-                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto text-sm md:text-basehover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
+                <button className="bg-blue-500 text-white px-8 py-2 rounded-full mx-auto text-sm md:text-base hover:bg-blue-700 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">
                   Learn More
                 </button>
               </div>

@@ -1,9 +1,16 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cantata+One&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 @theme {
 
-  --color-lightpurple: #CFB3E8;
-  --color-darkpurple: #4C2770;
+  --font-nunito: 'Nunito Sans', sans-serif;
+  --font-cantata: 'Cantata One', serif;
+  --color-blue: #3564F2;
+  --color-2blue: #012057;
+  --color-navy: #0D2C54;
+  --color-red: #F24835;
+  --color-2red: #D30002;
   --color-lightgreen: #BEF2C7;
   --color-darkgreen: #71981F;
 

@@ -29,16 +29,16 @@ const cardVariants = {
  */
 function LinkCard({ title, description, to, href, imageUrl, className = '' }) {
   const baseClass =
-    'group relative flex min-h-80 w-full max-w-sm flex-col justify-between overflow-hidden rounded-2xl border p-6 text-left shadow-lg transition-colors bg-lightgreen  focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ' +
+    'group relative flex min-h-80 w-full max-w-md flex-col justify-between overflow-hidden rounded-2xl border p-6 text-left shadow-lg transition-colors bg-red-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ' +
     className;
 
   const content = (
     <>
       <div className="z-10">
-        <h3 className="mb-2 font-serif text-2xl font-semibold tracking-tight text-gray-900">
+        <h3 className="mb-2 text-xl sm:text-2xl font-semibold tracking-tight text-navy text-center md:text-left">
           {title}
         </h3>
-        <div className="max-w-[90%] text-base text-gray-600 space-y-2">
+        <div className="mx-auto max-w-[90%] text-base sm:text-lg space-y-2 text-center md:text-left md:mx-0">
           {description}
         </div>
       </div>

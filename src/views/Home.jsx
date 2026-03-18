@@ -2,65 +2,71 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
-import ContactSection from '../components/ContactSection';
 
 function Home() {
   return (
-    <div className="flex flex-col flex-1 min-h-screen justify-center items-center">
+    <div className="flex flex-col flex-1 min-h-screen">
       {/* Hero section */}
-      <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto">
-        <div className="col-start-2 col-span-14">
-          {/* <h1 className="text-4xl font-bold my-10 text-black -mb-10 capitalize">A Parents guide to growing powerful citizens</h1> */}
-          <div className="flex md:flex-row flex-col justify-center items-center min-h-screen my-auto gap-6 md:gap-10">
-            <div className="flex flex-col w-full max-w-2xl lg:max-w-4xl px-6 md:px-0 text-center md:text-left md:mr-12 py-8 order-2 md:order-1">
-              <h1 className="text-lg md:text-xl mb-2 italic text-gray-700">Raising Powerful Citizens Starts at Home</h1>
-              <h1 className="text-xl md:text-2xl font-bold mb-4 leading-snug">
-                Inspiring the next generation to{" "}
-                <TextRotator
-                  words={[
-                    "dream big",
-                    "work hard",
-                    "lead with courage",
-                    "serve their community",
-                    "believe in America's story",
-                  ]}
-                  interval={2500}
-                  className="text-darkgreen font-bold text-[1.1em] md:text-[1.15em]"
-                />
-              </h1>
-              <div className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700">
-                <p>Every day as parents shape their children, they are shaping the future of our communities, our country, and our democracy.</p>
-                <p>Civic Seeds USA creates educational resources, programs, and family engagement tools that help parents grow powerful citizens by translating civic values into everyday parenting practices.</p> 
-                <p>Civic Seeds’ curricula, workshops, and resources cultivate children with strong character and family values, who have the tools and desire to help their communities and our country flourish.</p>
-                <p>Together we can help families grow the next generation of thoughtful, powerful citizens who have the caring, the courage, and the knowledge to make a difference.</p>
-              </div>
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-16">
+          <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
+            {/* <h1 className="text-4xl font-bold my-10 text-black -mb-10 capitalize">A Parents guide to growing powerful citizens</h1> */}
+            <div className="flex md:flex-row flex-col justify-center items-center min-h-screen gap-6 md:gap-10">
+              <div className="flex flex-col w-full max-w-2xl lg:max-w-4xl px-4 sm:px-6 md:px-0 text-center md:text-left md:mr-12 py-8 order-2 md:order-1">
+                <h1 className="text-xl md:text-2xl 2xl:text-3xl mb-2 italic text-gray-700">Raising Powerful Citizens Starts at Home</h1>
+                <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 leading-snug text-navy font-cantata">
+                  Inspiring the next generation to{" "}
+                  <TextRotator
+                    words={[
+                      "dream big",
+                      "work hard",
+                      "lead with courage",
+                      "serve their community",
+                      "believe in America's story",
+                    ]}
+                    interval={2500}
+                    className="text-darkgreen font-bold text-[1.1em] md:text-[1.15em]"
+                  />
+                </h1>
+                <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700 font-nunito">
+                  <p>Every day as parents shape their children, they are shaping the future of our communities, our country, and our democracy.</p>
+                  <p>Civic Seeds USA creates educational resources, programs, and family engagement tools that help parents grow powerful citizens by translating civic values into everyday parenting practices.</p> 
+                  <p>Civic Seeds’ curricula, workshops, and resources cultivate children with strong character and family values, who have the tools and desire to help their communities and our country flourish.</p>
+                  <p>Together we can help families grow the next generation of thoughtful, powerful citizens who have the caring, the courage, and the knowledge to make a difference.</p>
+                </div>
 
-              <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-6">
-                <Link
-                  to="/frameworks"
-                  className="bg-darkgreen text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]]"
-                >
-                  Explore the Frameworks
-                </Link>
-                <button className="bg-darkgreen text-white px-5 py-2.5 rounded-full text-sm font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]">Book a Workshop</button>
-              </div>
-            </div> 
+                <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
+                  <Link
+                    to="/frameworks"
+                    className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
+                  >
+                    Explore the Frameworks
+                  </Link>
+                  <Link
+                    to="/schedule-services"
+                    className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
+                  >
+                    Book a Workshop
+                  </Link>
+                </div>
+              </div> 
 
-            <div className="md:min-w-[320px] md:max-w-md h-64 md:h-auto w-4/5 max-w-sm items-center justify-center mt-4 md:mt-0 md:ml-8 order-1 md:order-2 flex-shrink-0">
-              <img src="/images/home.webp" alt="PA4REAL Logo" className="w-full h-full object-cover rounded-lg"/>
+              <div className="md:min-w-[320px] md:max-w-lg h-64 md:h-auto w-4/5 max-w-sm items-center justify-center mt-4 md:mt-0 md:ml-8 order-1 md:order-2 flex-shrink-0">
+                <img src="/images/home.webp" alt="PA4REAL Logo" className="w-full h-full object-cover rounded-lg"/>
+              </div>
             </div>
           </div>
         </div>
-      </div>  
+      </div>
 
       {/* why this matters section */}
-      <div className="w-full bg-lightpurple">
-        <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto">
-          <div className="col-start-2 col-span-14">
+      <div className="w-full bg-blue-200">
+        <div className="grid grid-cols-1 md:grid-cols-16">
+          <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex md:flex-row flex-col justify-center items-center gap-6 md:gap-10 py-12 md:py-16">
-              <div className="flex flex-col w-full max-w-2xl lg:max-w-4xl px-6 md:px-0 text-center md:text-left order-1 md:order-2 text-darkpurple">
-                <h2 className="text-xl md:text-2xl font-bold mb-4">Why this Matters</h2>
-                <div className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700">
+              <div className="flex flex-col lg:max-w-4xl px-4 sm:px-6 md:px-0 text-center md:text-left order-1 md:order-2 font-nunito">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy font-cantata">Why this Matters</h2>
+                <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700">
                   <p>Children learn their first lessons about values, fairness, responsibility, leadership, and community at home.</p>
                   <p>The way families make decisions, solve problems, care for one another, and contribute to their communities shapes how children understand citizenship.</p>
                   <p>Civic Seeds helps parents recognize the powerful role they already play and provides tools to make those lessons more intentional and applicable to civic life.</p>
@@ -76,7 +82,7 @@ function Home() {
                   <p>Every lesson is designed to remind you that you have power and you’re already building a better future… one child, one home, one community, one moment at a time.</p>
                 </div>
               </div>
-              <div className="md:min-w-[320px] md:max-w-md h-64 md:h-auto w-4/5 max-w-sm flex-shrink-0 order-2 md:order-1 md:mr-8">
+              <div className="md:min-w-[320px] md:max-w-md h-64 md:h-auto w-4/5 max-w-sm flex-shrink-0 order-2 md:order-1 md:mr-8 lg:mr-12">
                 <img src="/images/tree.jpeg" alt="Community and growth" className="w-full h-full object-cover rounded-lg"/>
               </div>
             </div>
@@ -84,113 +90,121 @@ function Home() {
         </div>
       </div>
 
-      {/* Frameworks section */}
-      <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto">
-        <div className="col-start-2 col-span-14">
-          <div className="text-center md:text-left mt-12">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-darkpurple capitalize">
-              The Frameworks
-            </h1>
-            <p className="text-lg md:text-xl mb-6 leading-relaxed text-gray-700">
-              Our work centers around three practical frameworks designed to help families connect
-              everyday parenting with civic learning.
-            </p>
-          </div>
+         {/* Frameworks section */}
+      <div className="w-full">
+        <div className="grid grid-cols-1 md:grid-cols-16 font-nunito">
+          <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
+            <div className="text-center md:text-left mt-12">
+              <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 text-navy capitalize font-cantata">
+                The Frameworks
+              </h1>
+              <p className="text-lg md:text-xl mb-6 leading-relaxed text-gray-700">
+                Our work centers around three practical frameworks designed to help families connect
+                everyday parenting with civic learning.
+              </p>
+            </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-6 md:px-0">
-            <LinkCard
-              to="/frameworks"
-              title="The UNIT Framework"
-              description={
-                <>
-                  <p>
-                    Families are the first place children experience cooperation, shared responsibility,
-                    and the pursuit of the common good and common goals.
-                  </p>
-                  <p>
-                    The UNIT Framework shows how family life connects to broader communities and civic
-                    participation. UNIT invites families to see themselves not as separate from the world
-                    around them, but as active participants in it—growing power together, from home to
-                    community to country.
-                  </p>
-                </>
-              }
-            />
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-4 sm:px-6 md:px-0">
+            <div className="flex justify-center">
+              <LinkCard
+                to="/frameworks"
+                title="The UNIT Framework"
+                description={
+                  <>
+                    <p>
+                      Families are the first place children experience cooperation, shared responsibility,
+                      and the pursuit of the common good and common goals.
+                    </p>
+                    <p>
+                      The UNIT Framework shows how family life connects to broader communities and civic
+                      participation. UNIT invites families to see themselves not as separate from the world
+                      around them, but as active participants in it—growing power together, from home to
+                      community to country.
+                    </p>
+                  </>
+                }
+              />
+            </div>
 
-            <LinkCard
-              to="/frameworks"
-              title="Power Parenting"
-              description={
-                <>
-                  <p>
-                    Power Parenting focuses on 12 strategies within 4 pillars that help children develop the
-                    skills and character needed to be thoughtful, powerful citizens.
-                  </p>
-                  <p>
-                    The Power Parenting Pillars balance inner development with outer engagement. The four
-                    pillars are:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1 mt-1">
-                    <li>Character &amp; Core Values</li>
-                    <li>Thinking Skills &amp; Understanding the World</li>
-                    <li>Connection, Communication, &amp; Relationships</li>
-                    <li>Capability, Accountability, &amp; Leadership</li>
-                  </ul>
-                  <p className="mt-2">
-                    There are 3 power parenting strategies under each pillar and each strategy builds both
-                    personal strength and civic readiness. Together, they form a practical foundation that
-                    supports children’s wellbeing at home and prepares them to participate meaningfully in
-                    their communities and in our democracy.
-                  </p>
-                </>
-              }
-            />
+            <div className="flex justify-center">
+              <LinkCard
+                to="/frameworks"
+                title="Power Parenting"
+                description={
+                  <>
+                    <p>
+                      Power Parenting focuses on 12 strategies within 4 pillars that help children develop the
+                      skills and character needed to be thoughtful, powerful citizens.
+                    </p>
+                    <p>
+                      The Power Parenting Pillars balance inner development with outer engagement. The four
+                      pillars are:
+                    </p>
+                    <ul className="list-disc list-inside space-y-1 mt-1">
+                      <li>Character &amp; Core Values</li>
+                      <li>Thinking Skills &amp; Understanding the World</li>
+                      <li>Connection, Communication, &amp; Relationships</li>
+                      <li>Capability, Accountability, &amp; Leadership</li>
+                    </ul>
+                    <p className="mt-2">
+                      There are 3 power parenting strategies under each pillar and each strategy builds both
+                      personal strength and civic readiness. Together, they form a practical foundation that
+                      supports children’s wellbeing at home and prepares them to participate meaningfully in
+                      their communities and in our democracy.
+                    </p>
+                  </>
+                }
+              />
+            </div>
 
-            <LinkCard
-              to="/frameworks"
-              title="Parents in Action"
-              description={
-                <>
-                  <p>
-                    Parents in Action helps families turn their values into meaningful community involvement,
-                    showing children that even small actions can strengthen their communities.
-                  </p>
-                  <p>
-                    Parents in Action teaches how power works in our country, what policies affect our
-                    children the most, how we can make a difference, and why and how to connect with each
-                    other in community.
-                  </p>
-                  <p>
-                    The world is hard and we are tired. We don’t have time to save the world, but we do have
-                    time to take small actions that add up to a big difference.
-                  </p>
-                </>
-              }
-            />
-          </div>
+            <div className="flex justify-center">
+              <LinkCard
+                to="/frameworks"
+                title="Parents in Action"
+                description={
+                  <>
+                    <p>
+                      Parents in Action helps families turn their values into meaningful community involvement,
+                      showing children that even small actions can strengthen their communities.
+                    </p>
+                    <p>
+                      Parents in Action teaches how power works in our country, what policies affect our
+                      children the most, how we can make a difference, and why and how to connect with each
+                      other in community.
+                    </p>
+                    <p>
+                      The world is hard and we are tired. We don’t have time to save the world, but we do have
+                      time to take small actions that add up to a big difference.
+                    </p>
+                  </>
+                }
+              />
+            </div>
+            </div>
 
-          <div className="text-center mt-4">
-            <p className="text-base md:text-lg mb-6 leading-relaxed italic text-gray-700">
-              Power Parenting and Parents in Action are two halves of one circle. What begins in the heart
-              of the home ripples outward into the heart of the community. And the lessons children learn
-              through teamwork, community service, and advocacy circle back home, reinforcing their sense of
-              purpose and belonging.
-            </p>
-            <img
-              src="/civic_seeds_logo.png"
-              alt="Civic Seeds logo"
-              className="w-40 h-40 md:w-52 md:h-52 mx-auto object-contain rounded-lg"
-            />
+            <div className="text-center mt-4">
+              <p className="text-lg md:text-xl 2xl:text-2xl mb-6 leading-relaxed italic text-gray-700">
+                Power Parenting and Parents in Action are two halves of one circle. What begins in the heart
+                of the home ripples outward into the heart of the community. And the lessons children learn
+                through teamwork, community service, and advocacy circle back home, reinforcing their sense of
+                purpose and belonging.
+              </p>
+              <img
+                src="/cslogo_revised.png"
+                alt="Civic Seeds logo"
+                className="w-40 h-40  md:w-64 md:h-64 mx-auto object-contain rounded-lg"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       {/* work with deitra section */}
-      <div className="w-full bg-lightpurple text-white py-16 px-6 md:px-8 mt-12">
-        <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto">
-          <div className="col-start-2 col-span-14">
-            <div className="flex flex-col gap-4 text-center md:text-left">
-              <h2 className="text-2xl md:text-4xl font-bold leading-snug text-darkpurple">
+      <div className="w-full bg-blue-200 py-16 px-4 md:px-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen max-w-6xl mx-auto">
+          <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
+            <div className="flex flex-col gap-4 text-center md:text-left font-nunito">
+              <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-navy font-cantata">
                 Work with Deitra
               </h2>
               <p className="text-base md:text-lg leading-relaxed text-gray-700">
@@ -230,7 +244,7 @@ function Home() {
               <div className="mt-6">
                 <Link
                   to="/schedule-services"
-                  className="inline-flex items-center justify-center rounded-full bg-darkgreen text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
+                  className="inline-flex items-center justify-center rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
                 >
                   Invite Deitra to Speak
                 </Link>
@@ -241,14 +255,14 @@ function Home() {
       </div>
 
       {/* a note from deitra section */}
-      <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto py-12" id="civic-seeds">
-        <div className="col-start-2 col-span-14">
-          <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-lightgreen p-6 md:p-8">
+      <div className="grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto py-12">
+        <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
+          <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-red-200 p-6 md:p-8">
             <div className="flex-1 flex flex-col justify-center">
-              <h1 className="text-2xl md:text-4xl font-bold mb-4 text-black capitalize">
+              <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mb-4 text-navy capitalize font-cantata">
                 A Note from Deitra
               </h1>
-              <div className="space-y-3 text-sm md:text-base leading-relaxed text-gray-700 italic">
+              <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700 italic font-nunito">
                 <p>As a community health nurse, family and community policy analyst, educator, and parent of four children, I’ve spent years thinking about what helps families and communities thrive.</p>
                 <p>I believe parents have more influence than they realize. The everyday conversations, decisions, and values we share with our children shape not only their futures, but the future of our communities.</p> 
                 <p>Civic Seeds was created to help parents recognize that power and to offer practical ways to nurture the next generation of thoughtful, engaged citizens.</p>
@@ -259,23 +273,23 @@ function Home() {
       </div>
 
       {/* resources for families section */}
-      <div className="w-full text-white py-16 px-6 md:px-8 mt-12">
-        <div className="container grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto">
-          <div className="col-start-3 col-span-12">
+      <div className="w-full text-white py-16 px-4 md:px-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen mx-auto">
+          <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex flex-col gap-4 text-center md:text-left">
-              <h2 className="text-2xl md:text-4xl font-bold leading-snug text-darkpurple">
+              <h2 className="text-2xl md:text-4xl font-bold leading-snug text-navy font-cantata">
                 Resouces for Families
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700">
+              <p className="text-lg md:text-xl leading-relaxed text-gray-700">
                 Explore tools designed to help families grow together while raising engaged citizens.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-4 items-center">
                 <div className="space-y-3">
-                <p className="text-base md:text-lg font-semibold text-gray-700">
+                <p className="text-lg md:text-xl font-semibold text-gray-700">
                     Resources available for pre-order:
                   </p>
-                  <div className="space-y-2 text-gray-700 text-sm md:text-base">
+                  <div className="space-y-2 text-gray-700 text-base md:text-lg">
                     <div className="flex items-start gap-2">
                       <span className="mt-0.5 text-darkgreen">✓</span>
                       <span>Parenting guidebook</span>
@@ -291,8 +305,8 @@ function Home() {
                   </div>
                 </div>
 
-                <div className="flex justify-center md:justify-end">
-                  <div className="w-4/5 max-w-sm h-40 md:h-56 rounded-xl bg-violet-300/30 flex items-center justify-center text-violet-100 text-sm md:text-base">
+                <div className="flex justify-center md:justify-center">
+                  <div className="w-full max-w-md h-56 md:h-90 rounded-xl bg-violet-300/30 flex items-center justify-center text-violet-100 text-sm md:text-base">
                     <img src="/images/farm.jpg" alt="Family at farm" className="w-full h-full object-cover rounded-lg" />
                   </div>
                 </div>
@@ -301,7 +315,7 @@ function Home() {
               <div className="mt-6">
                 <Link
                   to="/parenting-tools"
-                  className="inline-flex items-center justify-center rounded-full bg-darkgreen px-6 py-2.5 text-sm md:text-base font-medium text-white shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
+                  className="inline-flex items-center justify-center rounded-full bg-red px-6 py-2.5 text-sm md:text-base font-medium text-white shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
                 >
                   Explore Resources
                 </Link>
@@ -311,8 +325,50 @@ function Home() {
         </div>
       </div>
 
-      {/* Stay Connected - contact form section */}
-      <ContactSection />
+      {/* Stay Connected - email signup section */}
+      <div className="w-full py-12 md:py-16 bg-blue-200">
+        <div className="grid grid-cols-1 md:grid-cols-16 w-full max-w-6xl mx-auto px-4 md:px-0 items-center">
+          <div className="col-span-1 md:col-span-6 flex justify-center md:justify-start">
+            <img
+              src="/cslogo_revised.png"
+              alt="Civic Seeds logo"
+              className="w-40 h-40 md:w-56 md:h-56 object-contain"
+            />
+          </div>
+
+          <div className="col-span-1 md:col-span-10 my-10 md:my-0">
+            <div className="flex flex-col gap-4 text-center md:text-left max-w-2xl">
+              <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-navy font-cantata">
+                Stay Connected
+              </h2>
+              <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                Join our community of parents, educators, and community leaders exploring how family
+                life shapes civic life.
+              </p>
+              <p className="text-base md:text-lg leading-relaxed text-gray-700">
+                Sign up for insights, family activities, and ideas you can use right away.
+              </p>
+              <form
+                className="flex flex-row flex-wrap gap-3 mt-2 items-center justify-center sm:justify-start px-6 md:px-0"
+                onSubmit={(e) => e.preventDefault()}
+              >
+                <input
+                  type="email"
+                  placeholder="Your email"
+                  aria-label="Email for signup"
+                  className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
+                />
+                <button
+                  type="submit"
+                  className="flex-shrink-0 rounded-full bg-darkgreen text-white px-6 py-2.5 text-sm font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                >
+                  Sign up
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   );
