@@ -59,6 +59,19 @@ function Home() {
         </div>
       </div>
 
+      {/* Curve divider into blue section */}
+      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          style={{ transform: 'scaleY(-1)' }}
+          className="w-full h-auto"
+        >
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+        </svg>
+      </div>
+
       {/* why this matters section */}
       <div className="w-full bg-blue-200">
         <div className="grid grid-cols-1 md:grid-cols-16">
@@ -88,6 +101,19 @@ function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Curve divider out of blue section */}
+      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          style={{ transform: 'scaleX(-1)' }}
+          className="w-full h-auto"
+        >
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+        </svg>
       </div>
 
          {/* Frameworks section */}
@@ -200,7 +226,18 @@ function Home() {
       </div>
 
       {/* work with deitra section */}
-      <div className="w-full bg-blue-200 py-16 px-4 md:px-8 mt-12">
+      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          style={{ transform: 'scaleY(-1)' }}
+          className="w-full h-auto"
+        >
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+        </svg>
+      </div>
+      <div className="w-full bg-blue-200 py-16 px-4 md:px-8 mt-0">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen max-w-6xl mx-auto">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex flex-col gap-4 text-center md:text-left font-nunito">
@@ -252,6 +289,19 @@ function Home() {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Curve divider out of blue section */}
+      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          style={{ transform: 'scaleX(-1)' }}
+          className="w-full h-auto"
+        >
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+        </svg>
       </div>
 
       {/* a note from deitra section */}
@@ -326,6 +376,17 @@ function Home() {
       </div>
 
       {/* Stay Connected - email signup section */}
+      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1000 100"
+          preserveAspectRatio="none"
+          style={{ transform: 'scaleY(-1)' }}
+          className="w-full h-auto"
+        >
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+        </svg>
+      </div>
       <div className="w-full py-12 md:py-16 bg-blue-200">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full max-w-6xl mx-auto px-4 md:px-0 items-center">
           <div className="col-span-1 md:col-span-6 flex justify-center md:justify-start">

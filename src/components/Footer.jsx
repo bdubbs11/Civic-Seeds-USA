@@ -36,7 +36,7 @@ function Footer() {
           {/* Brand / Contact */}
           <div className="text-center md:text-left">
             <h2 className="text-black text-2xl font-bold mb-2 hover:text-violet-800 ease-in-out duration-300">
-              PA4REAL
+              Civic Seeds USA
             </h2>
             <p className="text-gray-600 text-sm">support@pa4real.com</p>
           </div>
@@ -103,7 +103,7 @@ function Footer() {
 
           {/* Copyright */}
           <p className="text-gray-600 text-sm">
-            © 2025 PA4REAL. All rights reserved.
+            © 2025 Civic Seeds USA. All rights reserved.
           </p>
         </div>
       </div>
