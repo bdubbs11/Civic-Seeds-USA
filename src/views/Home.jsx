@@ -421,7 +421,7 @@ function Home() {
                 />
                 <button
                   type="submit"
-                  className="flex-shrink-0 rounded-full bg-darkgreen text-white px-6 py-2.5 text-sm font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                  className="flex-shrink-0 rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
                 >
                   Sign up
                 </button>
