@@ -32,12 +32,9 @@ function Home() {
   }, [updateWhyMattersScrollFade]);
 
 // for busy parents
-// interested in preorder
 
 // imgs in unit framework page and parent in action page
 // mailling list signup
-
-// set up 404 page
 
 // try and see if i can set up database to track interested in preorder
   return (
@@ -95,8 +92,8 @@ function Home() {
         </div>
       </div>
 
-      {/* Curve divider into blue section */}
-      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+      {/* Curve divider into blue section — nudge down on small screens to close hairline above blue */}
+      <div className="w-full -mt-1 translate-y-1 md:translate-y-0 overflow-hidden leading-none" aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
@@ -202,9 +199,10 @@ function Home() {
           <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-4 sm:px-6 md:px-0">
             <div className="flex h-full justify-center">
               <LinkCard
-                to="/frameworks"
+                // to="/frameworks"
                 title="The UNIT Framework"
                 imageUrl="/images/gardening.jpg"
+                imageFit="fill"
                 description={
                   <>
                     <p>
@@ -224,7 +222,7 @@ function Home() {
 
             <div className="flex justify-center">
               <LinkCard
-                to="/frameworks"
+                // to="/frameworks"
                 title="Power Parenting"
                 description={
                   <>
@@ -255,10 +253,9 @@ function Home() {
 
             <div className="flex h-full justify-center">
               <LinkCard
-                to="/frameworks"
+                // to="/frameworks"
                 title="Parents in Action"
                 imageUrl="/images/capital.jpg"
-                imageObjectPosition="mid-lower"
                 description={
                   <>
                     <p>
@@ -298,7 +295,7 @@ function Home() {
       </div>
 
       {/* work with deitra section */}
-      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+      <div className="w-full -mt-1 translate-y-1 md:translate-y-0 overflow-hidden leading-none" aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
@@ -312,52 +309,82 @@ function Home() {
       <div className="w-full bg-blue py-16 px-4 md:px-8 mt-0">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen max-w-6xl mx-auto">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
-            <div className="flex flex-col gap-4 text-center md:text-left font-nunito">
-              <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-navy font-cantata">
-                Work with Deitra
-              </h2>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700">
-                Civic Seeds offers interactive workshops and presentations designed for parents, educators,
-                faith communities, civic organizations, and anyone invested in the youth.
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 mt-4">
-                <div className="space-y-3">
-                  <p className="text-base md:text-lg font-semibold text-gray-700">
-                    Examples of Speaking Topics Include:
+            <div className="flex flex-col gap-10 md:gap-12 lg:gap-14 font-nunito">
+              {/* Row 1: text | image */}
+              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 lg:gap-10">
+                <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left">
+                  <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-white font-cantata">
+                    Work with Deitra
+                  </h2>
+                  <p className="text-base md:text-lg leading-relaxed text-white">
+                    Civic Seeds offers interactive workshops and presentations designed for parents, educators,
+                    faith communities, civic organizations, and anyone invested in the youth.
                   </p>
-                  <ul className="list-disc list-inside space-y-1.5 text-gray-700 text-sm md:text-base">
-                    <li>Power Parenting: Raising Kids Ready for Democracy</li>
-                    <li>Parents in Action: Turning Family Values into Civic Engagement</li>
-                    <li>The UNIT Framework for Families and Communities</li>
-                  </ul>
+                  <div className="space-y-3">
+                    <p className="text-base md:text-lg font-semibold text-white">
+                      Examples of Speaking Topics Include:
+                    </p>
+                    <ul className="list-disc list-inside space-y-1.5 text-white text-sm md:text-base">
+                      <li>Power Parenting: Raising Kids Ready for Democracy</li>
+                      <li>Parents in Action: Turning Family Values into Civic Engagement</li>
+                      <li>The UNIT Framework for Families and Communities</li>
+                    </ul>
+                  </div>
                 </div>
-
-                <div className="space-y-3">
-                  <p className="text-base md:text-lg font-semibold text-gray-700">
-                    Examples of Workshop Topics Include:
-                  </p>
-                  <ul className="list-disc list-inside space-y-1.5 text-gray-700 text-sm md:text-base">
-                    <li>Quarter Hour of Power: Civic Learning in Everyday Life</li>
-                    <li>
-                      Choosing Your Family Values: Creating Standards, Rules, and Traditions that Match Them
-                    </li>
-                  </ul>
+                <div className="mx-auto w-full max-w-lg shrink-0 md:mx-0 md:w-[min(100%,22rem)] lg:w-[min(100%,26rem)]">
+                  <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/25 shadow-md">
+                    <img
+                      src="/images/nurse.JPG"
+                      alt="Deitra in a nursing and community health context"
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: 'center top' }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
                 </div>
               </div>
 
-              <p className="text-sm md:text-base leading-relaxed text-gray-700 mt-4">
-                These sessions provide practical strategies participants can start using immediately.
-              </p>
+              {/* Row 2: image | text */}
+              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 lg:gap-10">
+                <div className="mx-auto w-full max-w-lg shrink-0 md:mx-0 md:w-[min(100%,22rem)] lg:w-[min(100%,26rem)]">
+                  <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/25 shadow-md">
+                    <img
+                      src="/images/present.JPG"
+                      alt="Deitra leading a workshop or presentation"
+                      className="h-full w-full object-cover"
+                      style={{ objectPosition: 'center top' }}
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  </div>
+                </div>
+                <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left">
+                  <div className="space-y-3">
+                    <p className="text-base md:text-lg font-semibold text-white">
+                      Examples of Workshop Topics Include:
+                    </p>
+                    <ul className="list-disc list-inside space-y-1.5 text-white text-sm md:text-base">
+                      <li>Quarter Hour of Power: Civic Learning in Everyday Life</li>
+                      <li>
+                        Choosing Your Family Values: Creating Standards, Rules, and Traditions that Match Them
+                      </li>
+                    </ul>
+                  </div>
+                  <p className="text-sm md:text-base leading-relaxed text-white">
+                    These sessions provide practical strategies participants can start using immediately.
+                  </p>
+                </div>
+              </div>
 
-              <div className="mt-6">
+              {/* <div className="mt-2 flex justify-center md:justify-start">
                 <Link
                   to="/schedule-services"
                   className="inline-flex items-center justify-center rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
                 >
                   Invite Deitra to Speak
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
@@ -381,10 +408,10 @@ function Home() {
         <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
           <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-red p-6 md:p-8">
             <div className="flex-1 flex flex-col justify-center">
-              <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mb-4 text-navy capitalize font-cantata">
+              <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mb-4 text-white capitalize font-cantata">
                 A Note from Deitra
               </h1>
-              <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700 italic font-nunito">
+              <div className="space-y-3 text-base md:text-lg leading-relaxed text-white italic font-nunito">
                 <p>As a community health nurse, family and community policy analyst, educator, and parent of four children, I’ve spent years thinking about what helps families and communities thrive.</p>
                 <p>I believe parents have more influence than they realize. The everyday conversations, decisions, and values we share with our children shape not only their futures, but the future of our communities.</p> 
                 <p>Civic Seeds was created to help parents recognize that power and to offer practical ways to nurture the next generation of thoughtful, engaged citizens.</p>
@@ -429,18 +456,34 @@ function Home() {
 
                 <div className="flex justify-center md:justify-center">
                   <div className="w-full max-w-md h-56 md:h-90 rounded-xl bg-violet-300/30 flex items-center justify-center text-violet-100 text-sm md:text-base">
-                    <img src="/images/farm.jpg" alt="Family at farm" className="w-full h-full object-cover rounded-lg" />
+                    <img
+                      src="/images/farm.jpg"
+                      alt="Family at farm"
+                      className="h-full w-full rounded-lg object-cover object-top md:object-center"
+                    />
                   </div>
                 </div>
               </div>
 
-              <div className="mt-6">
-                <Link
-                  to="/parenting-tools"
-                  className="inline-flex items-center justify-center rounded-full bg-red px-6 py-2.5 text-sm md:text-base font-medium text-white shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
+              <div className="mt-6 w-full max-w-2xl mx-auto md:mx-0">
+                <form
+                  className="flex flex-row flex-wrap gap-3 items-center justify-center sm:justify-start"
+                  onSubmit={(e) => e.preventDefault()}
                 >
-                  Explore Resources
-                </Link>
+                  <input
+                    type="email"
+                    id="resources-preorder-email"
+                    placeholder="Your email"
+                    aria-label="Email for pre-order updates"
+                    className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
+                  />
+                  <button
+                    type="submit"
+                    className="flex-shrink-0 rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                  >
+                    Interested in pre-order
+                  </button>
+                </form>
               </div>
             </div>
           </div>
@@ -448,7 +491,7 @@ function Home() {
       </div>
 
       {/* Stay Connected - email signup section */}
-      <div className="w-full -mt-1 overflow-hidden leading-none" aria-hidden="true">
+      <div className="w-full -mt-1 translate-y-1 md:translate-y-0 overflow-hidden leading-none" aria-hidden="true">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1000 100"
@@ -471,14 +514,14 @@ function Home() {
 
           <div className="col-span-1 md:col-span-10 my-10 md:my-0">
             <div className="flex flex-col gap-4 text-center md:text-left max-w-2xl">
-              <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-navy font-cantata">
+              <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-white   font-cantata">
                 Stay Connected
               </h2>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700">
+              <p className="text-base md:text-lg leading-relaxed text-white">
                 Join our community of parents, educators, and community leaders exploring how family
                 life shapes civic life.
               </p>
-              <p className="text-base md:text-lg leading-relaxed text-gray-700">
+              <p className="text-base md:text-lg leading-relaxed text-white">
                 Sign up for insights, family activities, and ideas you can use right away.
               </p>
               <form

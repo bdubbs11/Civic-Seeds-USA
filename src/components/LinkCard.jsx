@@ -40,6 +40,7 @@ function LinkCard({
   className = '',
 }) {
   const useContain = imageFit === 'contain';
+  const useFill = imageFit === 'fill';
 
   const baseClass =
     'group relative flex h-full min-h-80 w-full max-w-md flex-col overflow-hidden rounded-2xl border p-6 text-left shadow-lg transition-colors bg-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2 ' +
@@ -54,11 +55,13 @@ function LinkCard({
     'block min-h-0 min-w-0 transition-transform duration-300 ease-out group-hover:scale-[1.02]';
   // Mid-lower crop for cover only; Y% toward 50% = scooted up vs bottom.
   const objectPositionClass =
-    !useContain && imageObjectPosition === 'mid-lower' ? 'object-[50%_54%]' : 'object-center';
+    !useContain && !useFill && imageObjectPosition === 'mid-lower' ? 'object-[50%_54%]' : 'object-center';
 
-  const imageClassName = useContain
-    ? `${imageMotionBase} max-h-full max-w-full object-contain object-center`
-    : `${imageMotionBase} h-full w-full object-cover ${objectPositionClass}`;
+  const imageClassName = useFill
+    ? `${imageMotionBase} h-full w-full object-fill`
+    : useContain
+      ? `${imageMotionBase} max-h-full max-w-full object-contain object-center`
+      : `${imageMotionBase} h-full w-full object-cover ${objectPositionClass}`;
 
   const content = (
     <>
@@ -66,7 +69,7 @@ function LinkCard({
         <h3 className="mb-2 text-xl sm:text-2xl xl:text-3xl font-semibold tracking-tight text-white text-center md:text-left">
           {title}
         </h3>
-        <div className="mx-auto max-w-[90%] flex-1 text-base sm:text-lg space-y-2 text-center text-white md:text-left md:mx-0">
+        <div className="mx-auto max-w-[90%] flex-1 text-base md:text-lg space-y-2 text-center text-white md:text-left md:mx-0">
           {description}
         </div>
       </div>

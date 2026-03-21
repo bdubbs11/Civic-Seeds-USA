@@ -9,6 +9,8 @@ import ScheduleServices from './views/Schedule_services';
 import Shops from './views/Shops';  
 import ParentingTools from './views/Parenting_tools';
 import Frameworks from './views/Frameworks';
+import NotFound from './views/NotFound';
+
 function App() {
 
   return (
@@ -25,6 +27,7 @@ function App() {
           <Route path="/parenting-tools" element={<ParentingTools />} />
           <Route path="/shops" element={<Shops />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
