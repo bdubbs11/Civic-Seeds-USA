@@ -524,6 +524,10 @@ function Home() {
               <p className="text-base md:text-lg leading-relaxed text-white">
                 Sign up for insights, family activities, and ideas you can use right away.
               </p>
+
+              <p className="text-base md:text-lg leading-relaxed text-white font-bold">
+                Check back later for updates. Thanks for your interest!
+              </p>
               {/* <form
                 className="flex flex-row flex-wrap gap-3 mt-2 items-center justify-center sm:justify-start px-6 md:px-0"
                 onSubmit={(e) => e.preventDefault()}
