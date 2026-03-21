@@ -345,9 +345,9 @@ function Home() {
                 </div>
               </div>
 
-              {/* Row 2: image | text */}
+              {/* Row 2: image | text — order must live on direct flex children, not nested wrappers */}
               <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 lg:gap-10">
-                <div className="mx-auto w-full max-w-lg shrink-0 md:mx-0 md:w-[min(100%,22rem)] lg:w-[min(100%,26rem)]">
+                <div className="order-2 md:order-1 mx-auto w-full max-w-lg shrink-0 md:mx-0 md:w-[min(100%,22rem)] lg:w-[min(100%,26rem)]">
                   <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/25 shadow-md">
                     <img
                       src="/images/present.JPG"
@@ -359,7 +359,7 @@ function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left">
+                <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left order-1 md:order-2">
                   <div className="space-y-3">
                     <p className="text-base md:text-lg font-semibold text-white">
                       Examples of Workshop Topics Include:
@@ -466,7 +466,7 @@ function Home() {
               </div>
 
               <div className="mt-6 w-full max-w-2xl mx-auto md:mx-0">
-                <form
+                {/* <form
                   className="flex flex-row flex-wrap gap-3 items-center justify-center sm:justify-start"
                   onSubmit={(e) => e.preventDefault()}
                 >
@@ -483,7 +483,7 @@ function Home() {
                   >
                     Interested in pre-order
                   </button>
-                </form>
+                </form> */}
               </div>
             </div>
           </div>
@@ -524,7 +524,7 @@ function Home() {
               <p className="text-base md:text-lg leading-relaxed text-white">
                 Sign up for insights, family activities, and ideas you can use right away.
               </p>
-              <form
+              {/* <form
                 className="flex flex-row flex-wrap gap-3 mt-2 items-center justify-center sm:justify-start px-6 md:px-0"
                 onSubmit={(e) => e.preventDefault()}
               >
@@ -540,7 +540,7 @@ function Home() {
                 >
                   Sign up
                 </button>
-              </form>
+              </form> */}
             </div>
           </div>
         </div>
