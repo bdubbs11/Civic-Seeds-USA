@@ -18,7 +18,7 @@ function PowerParentingStrategy() {
       {/* Curve Divider */}
       <div className="w-full -mt-1">
         <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' className="w-full h-auto" preserveAspectRatio="none" style={{ transform: 'scaleX(-1)' }}>
-          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#2B7FFF'></path>
+          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#3664F2'></path>
         </svg>
       </div>
 
@@ -48,7 +48,7 @@ function PowerParentingStrategy() {
       
       <div className="w-full -mt-1">
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' className="w-full h-auto" preserveAspectRatio="none" style={{ transform: 'scaleY(-1)' }}>
-          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#2B7FFF'></path>
+          <path d='M1000 100C500 100 500 4 0 4V0h1000v100Z' fill='#3664F2'></path>
         </svg>
       </div>
       <div className="container grid grid-cols-1 md:grid-cols-16 mx-auto bg-blue-500 min-h-screen">

@@ -1,9 +1,45 @@
-import React from 'react';
+import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
 
 function Home() {
+  const whyMattersScrollRef = useRef(null);
+  const [whyMattersBottomFade, setWhyMattersBottomFade] = useState(false);
+
+  const updateWhyMattersScrollFade = useCallback(() => {
+    const el = whyMattersScrollRef.current;
+    if (!el) return;
+    const epsilon = 4;
+    const canScroll = el.scrollHeight > el.clientHeight + epsilon;
+    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - epsilon;
+    setWhyMattersBottomFade(canScroll && !atBottom);
+  }, []);
+
+  useLayoutEffect(() => {
+    const el = whyMattersScrollRef.current;
+    if (!el) return;
+    updateWhyMattersScrollFade();
+    el.addEventListener('scroll', updateWhyMattersScrollFade, { passive: true });
+    window.addEventListener('resize', updateWhyMattersScrollFade);
+    const ro = new ResizeObserver(updateWhyMattersScrollFade);
+    ro.observe(el);
+    return () => {
+      el.removeEventListener('scroll', updateWhyMattersScrollFade);
+      window.removeEventListener('resize', updateWhyMattersScrollFade);
+      ro.disconnect();
+    };
+  }, [updateWhyMattersScrollFade]);
+
+// for busy parents
+// interested in preorder
+
+// imgs in unit framework page and parent in action page
+// mailling list signup
+
+// set up 404 page
+
+// try and see if i can set up database to track interested in preorder
   return (
     <div className="flex flex-col flex-1 min-h-screen">
       {/* Hero section */}
@@ -35,7 +71,7 @@ function Home() {
                   <p>Together we can help families grow the next generation of thoughtful, powerful citizens who have the caring, the courage, and the knowledge to make a difference.</p>
                 </div>
 
-                <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
+                {/* <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
                   <Link
                     to="/frameworks"
                     className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
@@ -48,7 +84,7 @@ function Home() {
                   >
                     Book a Workshop
                   </Link>
-                </div>
+                </div> */}
               </div> 
 
               <div className="md:min-w-[320px] md:max-w-lg h-64 md:h-auto w-4/5 max-w-sm items-center justify-center mt-4 md:mt-0 md:ml-8 order-1 md:order-2 flex-shrink-0">
@@ -68,35 +104,68 @@ function Home() {
           style={{ transform: 'scaleY(-1)' }}
           className="w-full h-auto"
         >
-          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
 
       {/* why this matters section */}
-      <div className="w-full bg-blue-200">
+      <div className="w-full bg-blue">
         <div className="grid grid-cols-1 md:grid-cols-16">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
-            <div className="flex md:flex-row flex-col justify-center items-center gap-6 md:gap-10 py-12 md:py-16">
-              <div className="flex flex-col lg:max-w-4xl px-4 sm:px-6 md:px-0 text-center md:text-left order-1 md:order-2 font-nunito">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4 text-navy font-cantata">Why this Matters</h2>
-                <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700">
-                  <p>Children learn their first lessons about values, fairness, responsibility, leadership, and community at home.</p>
-                  <p>The way families make decisions, solve problems, care for one another, and contribute to their communities shapes how children understand citizenship.</p>
-                  <p>Civic Seeds helps parents recognize the powerful role they already play and provides tools to make those lessons more intentional and applicable to civic life.</p>
-                  <p>The tools taught in Power Parenting and Parent in Action help make your life easier in the home and in your community. Civic Seeds is for you if:</p>
-                  <ul className="list-disc list-inside space-y-1.5 text-gray-700">
-                    <li>You’re feeling overwhelmed or unsure in your parenting</li>
-                    <li>You’re struggling with your kids’ behavior, screens, or motivation</li>
-                    <li>You feel disconnected from your kids or your community</li>
-                    <li>You want to make a difference, but don’t know where to start</li>
-                    <li>You just want to raise good humans</li>
-                  </ul>
-                  <p>This guide isn’t about doing more; it’s about doing what matters. It helps you feel calmer and more connected, teach values that last, and raise children ready to lead, love, and contribute.</p>
-                  <p>Every lesson is designed to remind you that you have power and you’re already building a better future… one child, one home, one community, one moment at a time.</p>
-                </div>
+            <div className="flex md:flex-row flex-col md:items-start justify-center gap-6 md:gap-6 lg:gap-8 py-12 md:py-16">
+              <div className="w-4/5 max-w-sm md:max-w-md md:w-[clamp(20rem,38vw,28rem)] flex-shrink-0 aspect-[3/4] mx-auto md:mx-0 overflow-hidden rounded-lg order-2 md:order-1 md:mr-8 lg:mr-12 self-center md:self-start">
+                <img
+                  src="/images/pillars.jpeg"
+                  alt="Community and growth"
+                  className="h-full w-full object-cover object-center"
+                />
               </div>
-              <div className="md:min-w-[320px] md:max-w-md h-64 md:h-auto w-4/5 max-w-sm flex-shrink-0 order-2 md:order-1 md:mr-8 lg:mr-12">
-                <img src="/images/tree.jpeg" alt="Community and growth" className="w-full h-full object-cover rounded-lg"/>
+              <div className="flex flex-col min-w-0 flex-1 px-4 sm:px-6 md:px-0 text-center md:text-left order-1 md:order-2 font-nunito gap-3 md:gap-3">
+                <h2 className="text-3xl xl:text-4xl font-bold text-white font-cantata shrink-0 mb-2">Why this Matters</h2>
+                <div className="relative min-w-0">
+                  <div
+                    ref={whyMattersScrollRef}
+                    className="flex flex-col gap-2.5 md:gap-3 min-w-0 pb-0.5 md:max-h-[calc(clamp(20rem,38vw,28rem)*4/3-4.25rem)] md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain md:pr-2 [scrollbar-gutter:stable]"
+                  >
+                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
+                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">The Problem:</h3>
+                    <p className="text-base md:text-lg text-white">
+                      There is so much division among us and it’s increasing. We have lower trust in our institutions, and we’re seeing a decline in civic knowledge – the understanding of how and why our government works.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
+                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Insights:</h3>
+                    <p className="text-base md:text-lg  text-white">
+                      Research shows that the skills that make civic life possible, characteristics like responsibility, empathy, and critical thinking, are developed early through relationships with caregivers. Many parents care deeply about raising thoughtful, responsible kids, but don’t have simple, practical tools to do that intentionally. So, there’s a disconnect: we expect strong civic participation later in life, but we’re not intentionally building those skills where they begin… in families.
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
+                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Solution:</h3>
+                    <p className="text-base md:text-lg  text-white">
+                      Civic Seeds connects everyday parenting with civic development through practical frameworks with simple, 15-minute activities that families can do together to build these skills over time. Not abstract ideas, but activities incorporated into everyday life. That’s how busy people can begin to strengthen our communities from the ground up!
+                    </p>
+                  </div>
+                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
+                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Civic Seeds is for you if:</h3>
+                    <div className="space-y-2 text-base md:text-lg  text-white">
+                      <p>The tools taught in Power Parenting and Parent in Action help make your life easier in the home and in your community.</p>
+                      <ul className="list-disc list-outside pl-4 space-y-1">
+                        <li>You’re feeling overwhelmed or unsure in your parenting</li>
+                        <li>You’re struggling with your kids’ behavior, screens, or motivation</li>
+                        <li>You feel disconnected from your kids or your community</li>
+                        <li>You want to make a difference, but don’t know where to start</li>
+                        <li>You just want to raise good humans</li>
+                      </ul>
+                      <p>This guide isn’t about doing more; it’s about doing what matters. It helps you feel calmer and more connected, teach values that last, and raise children ready to lead, love, and contribute.</p>
+                      <p>Every lesson is designed to remind you that you have power and you’re already building a better future… one child, one home, one community, one moment at a time.</p>
+                    </div>
+                  </div>
+                  </div>
+                  <div
+                    className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-12 bg-[linear-gradient(to_top,var(--color-blue),transparent)] transition-opacity duration-300 md:block ${whyMattersBottomFade ? 'opacity-100' : 'opacity-0'}`}
+                    aria-hidden="true"
+                  />
+                </div>
               </div>
             </div>
           </div>
@@ -112,7 +181,7 @@ function Home() {
           style={{ transform: 'scaleX(-1)' }}
           className="w-full h-auto"
         >
-          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
 
@@ -130,11 +199,12 @@ function Home() {
               </p>
             </div>
 
-          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-4 sm:px-6 md:px-0">
-            <div className="flex justify-center">
+          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-4 sm:px-6 md:px-0">
+            <div className="flex h-full justify-center">
               <LinkCard
                 to="/frameworks"
                 title="The UNIT Framework"
+                imageUrl="/images/gardening.jpg"
                 description={
                   <>
                     <p>
@@ -183,10 +253,12 @@ function Home() {
               />
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex h-full justify-center">
               <LinkCard
                 to="/frameworks"
                 title="Parents in Action"
+                imageUrl="/images/capital.jpg"
+                imageObjectPosition="mid-lower"
                 description={
                   <>
                     <p>
@@ -234,10 +306,10 @@ function Home() {
           style={{ transform: 'scaleY(-1)' }}
           className="w-full h-auto"
         >
-          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
-      <div className="w-full bg-blue-200 py-16 px-4 md:px-8 mt-0">
+      <div className="w-full bg-blue py-16 px-4 md:px-8 mt-0">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen max-w-6xl mx-auto">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex flex-col gap-4 text-center md:text-left font-nunito">
@@ -300,14 +372,14 @@ function Home() {
           style={{ transform: 'scaleX(-1)' }}
           className="w-full h-auto"
         >
-          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
 
       {/* a note from deitra section */}
       <div className="grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto py-12">
         <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
-          <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-red-200 p-6 md:p-8">
+          <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-red p-6 md:p-8">
             <div className="flex-1 flex flex-col justify-center">
               <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mb-4 text-navy capitalize font-cantata">
                 A Note from Deitra
@@ -384,10 +456,10 @@ function Home() {
           style={{ transform: 'scaleY(-1)' }}
           className="w-full h-auto"
         >
-          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#BEDBFF" />
+          <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
-      <div className="w-full py-12 md:py-16 bg-blue-200">
+      <div className="w-full py-12 md:py-16 bg-blue">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full max-w-6xl mx-auto px-4 md:px-0 items-center">
           <div className="col-span-1 md:col-span-6 flex justify-center md:justify-start">
             <img
