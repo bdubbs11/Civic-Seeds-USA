@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Contact() {
-  const email = 'hello@pa4real.com';
+  const email = 'deitra@civicseedsusa.org';
   const web = { label: 'Civic Seeds', url: '#' };
 
   return (
@@ -108,7 +108,7 @@ function Contact() {
               </div>
               <button
                 type="submit"
-                className="w-full rounded-full bg-darkgreen text-white px-6 py-2.5 text-sm font-medium shadow-sm transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:ring-offset-2"
+                className="w-full rounded-full bg-darkgreen text-white px-6 py-2.5 text-sm font-medium shadow-sm transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-offset-2"
               >
                 Send Message
               </button>

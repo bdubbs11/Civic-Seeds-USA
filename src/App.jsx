@@ -6,13 +6,12 @@ import Home from './views/Home';
 import Contact from './views/Contact';
 import PowerParentingStrategy from './views/Power_parenting_strat';
 import ScheduleServices from './views/Schedule_services';
-import Shops from './views/Shops';  
+import Shops from './views/Shops';
 import ParentingTools from './views/Parenting_tools';
 import Frameworks from './views/Frameworks';
 import NotFound from './views/NotFound';
 
 function App() {
-
   return (
     <BrowserRouter>
       <ScrollToTop />
@@ -20,7 +19,6 @@ function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/power-parenting" element={<PowerParentingStrategy />} />
-          {/* removes power parenting strategies to power parenting */}
           <Route path="/parents-in-action" />
           <Route path="/frameworks" element={<Frameworks />} />
           <Route path="/schedule-services" element={<ScheduleServices />} />
@@ -31,7 +29,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
-  )
+  );
 }
 
-export default App
+export default App;
