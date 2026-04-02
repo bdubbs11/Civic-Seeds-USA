@@ -51,8 +51,8 @@ function ScheduleServices() {
       <div className="mx-auto w-full max-w-6xl">
         
         {/* Header */}
-        <header className="mb-5 text-left">
-          <h1 className="mb-2 text-3xl font-bold text-navy font-cantata md:text-4xl">
+        <header className="my-5 text-left md:ml-15 ">
+          <h1 className="mb-2 text-3xl md:text-4xl 2xl:text-5xl font-bold text-navy font-cantata">
             Schedule Services
           </h1>
           <p className="max-w-2xl text-gray-700 md:text-lg">
