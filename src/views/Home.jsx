@@ -2,8 +2,14 @@ import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
+import { db } from '../../firebase';
+import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import emailjs from "@emailjs/browser";
 
 function Home() {
+  // email
+  const [email, setEmail] = useState('');
+
   const whyMattersScrollRef = useRef(null);
   const [whyMattersBottomFade, setWhyMattersBottomFade] = useState(false);
 
@@ -30,6 +36,66 @@ function Home() {
       ro.disconnect();
     };
   }, [updateWhyMattersScrollFade]);
+
+  // handle form submit for email signup
+  const handleSubmitEmailSignup = async (e) => {
+    e.preventDefault();
+
+    if (!email) return;
+
+    try  { 
+      await addDoc(collection(db, 'email-signup-list'), {
+        email: email,
+        createdAt: Timestamp.now(),
+      });
+      // 2️⃣ Send email notification via EmailJS
+      await emailjs.send(
+        "service_zjphp6o",    // From EmailJS dashboard
+        "template_5imdjf4",   // Your template ID
+        {
+          user_email: email,
+          time: new Date().toLocaleString(),
+        },
+        "vP3oWQf-NZAqonwNB"     // From EmailJS dashboard
+      );
+
+      setEmail('');
+      alert('Thank you for signing up!');
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      alert('Something went wrong. Please try again.');
+    }
+  };
+
+  // handle form submit for email signup
+  const handleSubmitPreorderResources = async (e) => {
+    e.preventDefault();
+
+    if (!email) return;
+
+    try  { 
+      await addDoc(collection(db, 'preorder-resources'), {
+        email: email,
+        createdAt: Timestamp.now(),
+      });
+      // 2️⃣ Send email notification via EmailJS
+      await emailjs.send(
+        "service_zjphp6o",    // From EmailJS dashboard
+        "template_gtp8jpp",   // Your template ID
+        {
+          user_email: email,
+          time: new Date().toLocaleString(),
+        },
+        "vP3oWQf-NZAqonwNB"     // From EmailJS dashboard
+      );
+
+      setEmail('');
+      alert('Thank you for signing up!');
+    } catch (error) {
+      console.error('Error adding document: ', error);
+      alert('Something went wrong. Please try again.');
+    }
+  };
 
 // for busy parents
 
@@ -68,20 +134,20 @@ function Home() {
                   <p>Together we can help families grow the next generation of thoughtful, powerful citizens who have the caring, the courage, and the knowledge to make a difference.</p>
                 </div>
 
-                {/* <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
-                  <Link
+                 <div className="flex flex-wrap gap-3 justify-center md:justify-start mt-8">
+                  {/* <Link
                     to="/frameworks"
                     className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
                   >
                     Explore the Frameworks
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/schedule-services"
                     className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
                   >
                     Book a Workshop
                   </Link>
-                </div> */}
+                </div>
               </div> 
 
               <div className="md:min-w-[320px] md:max-w-lg h-64 md:h-auto w-4/5 max-w-sm items-center justify-center mt-4 md:mt-0 md:ml-8 order-1 md:order-2 flex-shrink-0">
@@ -105,6 +171,7 @@ function Home() {
         </svg>
       </div>
 
+      {/* can make this into an accordian */}
       {/* why this matters section */}
       <div className="w-full bg-blue">
         <div className="grid grid-cols-1 md:grid-cols-16">
@@ -466,16 +533,18 @@ function Home() {
               </div>
 
               <div className="mt-6 w-full max-w-2xl mx-auto md:mx-0">
-                {/* <form
+                <form
                   className="flex flex-row flex-wrap gap-3 items-center justify-center sm:justify-start"
-                  onSubmit={(e) => e.preventDefault()}
+                  onSubmit={handleSubmitPreorderResources}
                 >
                   <input
                     type="email"
                     id="resources-preorder-email"
                     placeholder="Your email"
                     aria-label="Email for pre-order updates"
-                    className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
+                    className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                   <button
                     type="submit"
@@ -483,7 +552,7 @@ function Home() {
                   >
                     Interested in pre-order
                   </button>
-                </form> */}
+                </form>
               </div>
             </div>
           </div>
@@ -525,16 +594,18 @@ function Home() {
                 Sign up for insights, family activities, and ideas you can use right away.
               </p>
 
-              <p className="text-base md:text-lg leading-relaxed text-white font-bold">
+              {/* <p className="text-base md:text-lg leading-relaxed text-white font-bold">
                 Check back later for updates. Thanks for your interest!
-              </p>
-              {/* <form
+              </p> */}
+              <form
                 className="flex flex-row flex-wrap gap-3 mt-2 items-center justify-center sm:justify-start px-6 md:px-0"
-                onSubmit={(e) => e.preventDefault()}
+                onSubmit={handleSubmitEmailSignup}
               >
                 <input
                   type="email"
                   placeholder="Your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   aria-label="Email for signup"
                   className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                 />
@@ -544,7 +615,7 @@ function Home() {
                 >
                   Sign up
                 </button>
-              </form> */}
+              </form>
             </div>
           </div>
         </div>
