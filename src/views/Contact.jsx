@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { db } from '../../firebase';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { collection, query, where, getDocs, addDoc, Timestamp } from 'firebase/firestore';
 import { sendUniversalSubmission } from '../emailjsUniversal';
 
 const emptyContactForm = {
@@ -21,20 +21,31 @@ function Contact() {
     e.preventDefault();
 
     if (!newsletterEmail.trim()) return;
+    const emailLower = newsletterEmail.toLowerCase().trim();
 
     try {
+      const q = query(
+        collection(db, 'email-signup-list'),
+        where('email', '==', emailLower)
+      );
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        alert("You're already signed up!");
+        return;
+      }
+
       await addDoc(collection(db, 'email-signup-list'), {
-        email: newsletterEmail.trim(),
+        email: emailLower,
         createdAt: Timestamp.now(),
       });
-      await sendUniversalSubmission({
-        type: 'Newsletter Signup',
-        user_email: newsletterEmail.trim(),
-        first_name: '',
-        last_name: '',
-        subject: '',
-        message: 'User subscribed to updates',
-      });
+      // await sendUniversalSubmission({
+      //   type: 'Newsletter Signup',
+      //   user_email: emailLower,
+      //   first_name: '',
+      //   last_name: '',
+      //   subject: '',
+      //   message: 'User subscribed to updates',
+      // });
 
       setNewsletterEmail('');
       alert('Thank you for signing up!');

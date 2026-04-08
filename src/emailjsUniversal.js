@@ -4,10 +4,6 @@ export const EMAILJS_SERVICE_ID = 'service_zjphp6o';
 export const EMAILJS_TEMPLATE_ID = 'template_gtp8jpp';
 export const EMAILJS_PUBLIC_KEY = 'vP3oWQf-NZAqonwNB';
 
-/**
- * One EmailJS template for all submission types; template uses {{type}}, {{first_name}},
- * {{last_name}}, {{user_email}}, {{subject}}, {{message}}.
- */
 export async function sendUniversalSubmission({
   type,
   user_email,

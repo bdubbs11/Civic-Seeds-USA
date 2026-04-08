@@ -3,12 +3,13 @@ import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
 import { db } from '../../firebase';
-import { collection, addDoc, Timestamp } from 'firebase/firestore';
+import { collection, query, where, getDocs, addDoc, Timestamp } from 'firebase/firestore';
 import { sendUniversalSubmission } from '../emailjsUniversal';
 
 function Home() {
   // email
-  const [email, setEmail] = useState('');
+  const [stayConnectedEmail, setStayConnectedEmail] = useState('');
+  const [preorderResourcesEmail, setPreorderResourcesEmail] = useState('');
 
   const whyMattersScrollRef = useRef(null);
   const [whyMattersBottomFade, setWhyMattersBottomFade] = useState(false);
@@ -41,23 +42,34 @@ function Home() {
   const handleSubmitEmailSignup = async (e) => {
     e.preventDefault();
 
-    if (!email) return;
+    if (!stayConnectedEmail) return;
+    const emailLower = stayConnectedEmail.toLowerCase().trim();
 
     try  { 
+      const q = query(
+        collection(db, 'email-signup-list'),
+        where('email', '==', emailLower)
+      );
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        alert("You're already signed up!");
+        return;
+      }
+
       await addDoc(collection(db, 'email-signup-list'), {
-        email: email,
+        email: emailLower,
         createdAt: Timestamp.now(),
       });
-      await sendUniversalSubmission({
-        type: 'Newsletter Signup',
-        user_email: email,
-        first_name: '',
-        last_name: '',
-        subject: '',
-        message: 'User subscribed to updates',
-      });
+      // await sendUniversalSubmission({
+      //   type: 'Newsletter Signup',
+      //   user_email: emailLower,
+      //   first_name: '',
+      //   last_name: '',
+      //   subject: '',
+      //   message: 'User subscribed to updates',
+      // });
 
-      setEmail('');
+      setStayConnectedEmail('');
       alert('Thank you for signing up!');
     } catch (error) {
       console.error('Error adding document: ', error);
@@ -69,23 +81,34 @@ function Home() {
   const handleSubmitPreorderResources = async (e) => {
     e.preventDefault();
 
-    if (!email) return;
+    if (!preorderResourcesEmail) return;
+    const emailLower = preorderResourcesEmail.toLowerCase().trim();
 
     try  { 
+      const q = query(
+        collection(db, 'preorder-resources'),
+        where('email', '==', emailLower)
+      );
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        alert("You're already signed up!");
+        return;
+      }
+
       await addDoc(collection(db, 'preorder-resources'), {
-        email: email,
+        email: emailLower,
         createdAt: Timestamp.now(),
       });
-      await sendUniversalSubmission({
-        type: 'Preorder Resource',
-        user_email: email,
-        first_name: '',
-        last_name: '',
-        subject: 'Preorder Request',
-        message: 'User requested preorder resource',
-      });
+      // await sendUniversalSubmission({
+      //   type: 'Preorder Resource',
+      //   user_email: emailLower,
+      //   first_name: '',
+      //   last_name: '',
+      //   subject: 'Preorder Request',
+      //   message: 'User requested preorder resource',
+      // });
 
-      setEmail('');
+      setPreorderResourcesEmail('');
       alert('Thank you for signing up!');
     } catch (error) {
       console.error('Error adding document: ', error);
@@ -539,8 +562,8 @@ function Home() {
                     placeholder="Your email"
                     aria-label="Email for pre-order updates"
                     className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    value={preorderResourcesEmail}
+                    onChange={(e) => setPreorderResourcesEmail(e.target.value)}
                   />
                   <button
                     type="submit"
@@ -593,15 +616,15 @@ function Home() {
               {/* <p className="text-base md:text-lg leading-relaxed text-white font-bold">
                 Check back later for updates. Thanks for your interest!
               </p> */}
-              <form
+              <form id="stay-connected-form"
                 className="flex flex-row flex-wrap gap-3 mt-2 items-center justify-center sm:justify-start px-6 md:px-0"
                 onSubmit={handleSubmitEmailSignup}
               >
                 <input
                   type="email"
                   placeholder="Your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={stayConnectedEmail}
+                  onChange={(e) => setStayConnectedEmail(e.target.value)}
                   aria-label="Email for signup"
                   className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                 />
