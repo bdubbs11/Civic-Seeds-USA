@@ -4,7 +4,7 @@ import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
 import { db } from '../../firebase';
 import { collection, addDoc, Timestamp } from 'firebase/firestore';
-import emailjs from "@emailjs/browser";
+import { sendUniversalSubmission } from '../emailjsUniversal';
 
 function Home() {
   // email
@@ -48,16 +48,14 @@ function Home() {
         email: email,
         createdAt: Timestamp.now(),
       });
-      // 2️⃣ Send email notification via EmailJS
-      await emailjs.send(
-        "service_zjphp6o",    // From EmailJS dashboard
-        "template_5imdjf4",   // Your template ID
-        {
-          user_email: email,
-          time: new Date().toLocaleString(),
-        },
-        "vP3oWQf-NZAqonwNB"     // From EmailJS dashboard
-      );
+      await sendUniversalSubmission({
+        type: 'Newsletter Signup',
+        user_email: email,
+        first_name: '',
+        last_name: '',
+        subject: '',
+        message: 'User subscribed to updates',
+      });
 
       setEmail('');
       alert('Thank you for signing up!');
@@ -78,16 +76,14 @@ function Home() {
         email: email,
         createdAt: Timestamp.now(),
       });
-      // 2️⃣ Send email notification via EmailJS
-      await emailjs.send(
-        "service_zjphp6o",    // From EmailJS dashboard
-        "template_gtp8jpp",   // Your template ID
-        {
-          user_email: email,
-          time: new Date().toLocaleString(),
-        },
-        "vP3oWQf-NZAqonwNB"     // From EmailJS dashboard
-      );
+      await sendUniversalSubmission({
+        type: 'Preorder Resource',
+        user_email: email,
+        first_name: '',
+        last_name: '',
+        subject: 'Preorder Request',
+        message: 'User requested preorder resource',
+      });
 
       setEmail('');
       alert('Thank you for signing up!');
@@ -542,7 +538,7 @@ function Home() {
                     id="resources-preorder-email"
                     placeholder="Your email"
                     aria-label="Email for pre-order updates"
-                    className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
+                    className="flex-1 min-w-[160px] sm:min-w-0 rounded-md border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                   />

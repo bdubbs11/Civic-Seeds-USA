@@ -1,0 +1,19 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public forms: clients may only create documents (no reads/updates/deletes).
+    //
+    // If your project has OTHER collections/rules in the Firebase console, merge carefully.
+    // Deploying this entire file via `firebase deploy --only firestore:rules` replaces all rules.
+
+    match /email-signup-list/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+
+    match /preorder-resources/{document=**} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+  }
+}
