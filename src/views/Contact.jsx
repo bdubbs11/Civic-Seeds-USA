@@ -179,7 +179,7 @@ function Contact() {
                     onChange={(e) =>
                       setContactForm((prev) => ({ ...prev, firstName: e.target.value }))
                     }
-                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                   />
                 </div>
                 <div className="space-y-1.5">
@@ -196,7 +196,7 @@ function Contact() {
                     onChange={(e) =>
                       setContactForm((prev) => ({ ...prev, lastName: e.target.value }))
                     }
-                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                    className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                   />
                 </div>
               </div>
@@ -214,7 +214,7 @@ function Contact() {
                   onChange={(e) =>
                     setContactForm((prev) => ({ ...prev, email: e.target.value }))
                   }
-                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                 />
               </div>
               <div className="space-y-1.5">
@@ -231,7 +231,7 @@ function Contact() {
                   onChange={(e) =>
                     setContactForm((prev) => ({ ...prev, subject: e.target.value }))
                   }
-                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500"
+                  className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen"
                 />
               </div>
               <div className="space-y-1.5">
@@ -248,7 +248,7 @@ function Contact() {
                   onChange={(e) =>
                     setContactForm((prev) => ({ ...prev, message: e.target.value }))
                   }
-                  className="w-full min-h-[80px] rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-violet-500 focus:border-violet-500 resize-y"
+                  className="w-full min-h-[80px] rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:border-darkgreen resize-y"
                 />
               </div>
               <button

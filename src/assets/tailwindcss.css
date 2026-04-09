@@ -20,5 +20,15 @@
     80% { opacity: 1; }
     100% { opacity: 0; transform: translateY(-8px); }
   }
+  @keyframes accordion-down {
+    from { height: 0; }
+    to { height: var(--radix-accordion-content-height); }
+  }
+  @keyframes accordion-up {
+    from { height: var(--radix-accordion-content-height); }
+    to { height: 0; }
+  }
   --animate-fade-slide: fade-slide 2.5s ease-in-out;
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
 }

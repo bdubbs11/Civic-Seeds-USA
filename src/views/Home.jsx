@@ -1,42 +1,15 @@
-import React, { useCallback, useLayoutEffect, useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import LinkCard from '../components/LinkCard';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { db } from '../../firebase';
 import { collection, query, where, getDocs, addDoc, Timestamp } from 'firebase/firestore';
-import { sendUniversalSubmission } from '../emailjsUniversal';
 
 function Home() {
   // email
   const [stayConnectedEmail, setStayConnectedEmail] = useState('');
   const [preorderResourcesEmail, setPreorderResourcesEmail] = useState('');
-
-  const whyMattersScrollRef = useRef(null);
-  const [whyMattersBottomFade, setWhyMattersBottomFade] = useState(false);
-
-  const updateWhyMattersScrollFade = useCallback(() => {
-    const el = whyMattersScrollRef.current;
-    if (!el) return;
-    const epsilon = 4;
-    const canScroll = el.scrollHeight > el.clientHeight + epsilon;
-    const atBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - epsilon;
-    setWhyMattersBottomFade(canScroll && !atBottom);
-  }, []);
-
-  useLayoutEffect(() => {
-    const el = whyMattersScrollRef.current;
-    if (!el) return;
-    updateWhyMattersScrollFade();
-    el.addEventListener('scroll', updateWhyMattersScrollFade, { passive: true });
-    window.addEventListener('resize', updateWhyMattersScrollFade);
-    const ro = new ResizeObserver(updateWhyMattersScrollFade);
-    ro.observe(el);
-    return () => {
-      el.removeEventListener('scroll', updateWhyMattersScrollFade);
-      window.removeEventListener('resize', updateWhyMattersScrollFade);
-      ro.disconnect();
-    };
-  }, [updateWhyMattersScrollFade]);
 
   // handle form submit for email signup
   const handleSubmitEmailSignup = async (e) => {
@@ -196,7 +169,7 @@ function Home() {
         <div className="grid grid-cols-1 md:grid-cols-16">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex md:flex-row flex-col md:items-start justify-center gap-6 md:gap-6 lg:gap-8 py-12 md:py-16">
-              <div className="w-4/5 max-w-sm md:max-w-md md:w-[clamp(20rem,38vw,28rem)] flex-shrink-0 aspect-[3/4] mx-auto md:mx-0 overflow-hidden rounded-lg order-2 md:order-1 md:mr-8 lg:mr-12 self-center md:self-start">
+              <div className="w-4/5 md:w-[clamp(20rem,38vw,28rem)] flex-shrink-0 aspect-[3/4] mx-auto md:mx-0 overflow-hidden rounded-lg order-2 md:order-1 md:mr-8 lg:mr-12 self-center md:self-start">
                 <img
                   src="/images/pillars.jpeg"
                   alt="Community and growth"
@@ -205,50 +178,79 @@ function Home() {
               </div>
               <div className="flex flex-col min-w-0 flex-1 px-4 sm:px-6 md:px-0 text-center md:text-left order-1 md:order-2 font-nunito gap-3 md:gap-3">
                 <h2 className="text-3xl xl:text-4xl font-bold text-white font-cantata shrink-0 mb-2">Why this Matters</h2>
-                <div className="relative min-w-0">
-                  <div
-                    ref={whyMattersScrollRef}
-                    className="flex flex-col gap-2.5 md:gap-3 min-w-0 pb-0.5 md:max-h-[calc(clamp(20rem,38vw,28rem)*4/3-4.25rem)] md:overflow-y-auto md:overflow-x-hidden md:overscroll-y-contain md:pr-2 [scrollbar-gutter:stable]"
+                <Accordion type="single" collapsible defaultValue="problem" className="w-full space-y-2.5 md:space-y-3">
+                  <AccordionItem
+                    value="problem"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
-                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
-                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">The Problem:</h3>
-                    <p className="text-base md:text-lg text-white">
-                      There is so much division among us and it’s increasing. We have lower trust in our institutions, and we’re seeing a decline in civic knowledge – the understanding of how and why our government works.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
-                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Insights:</h3>
-                    <p className="text-base md:text-lg  text-white">
-                      Research shows that the skills that make civic life possible, characteristics like responsibility, empathy, and critical thinking, are developed early through relationships with caregivers. Many parents care deeply about raising thoughtful, responsible kids, but don’t have simple, practical tools to do that intentionally. So, there’s a disconnect: we expect strong civic participation later in life, but we’re not intentionally building those skills where they begin… in families.
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
-                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Solution:</h3>
-                    <p className="text-base md:text-lg  text-white">
+                    <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
+                      The Problem:
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3 md:pb-4 pt-0 text-base md:text-lg text-white">
+                      There is so much division among us and it’s increasing. We have lower trust in our institutions, and we’re seeing a decline in civic knowledge - the understanding of how and why our government works.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value="insights"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                  >
+                    <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
+                      Insights:
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3 md:pb-4 pt-0 text-base md:text-lg text-white">
+                      Research shows that the skills that make civic life possible, characteristics like responsibility, empathy, and critical thinking, are developed early through relationships with caregivers. Many parents care deeply about raising thoughtful, responsible kids, but don’t have simple, practical tools to do that intentionally. So, there’s a disconnect: we expect strong civic participation later in life, but we’re not intentionally building those skills where they begin... in families.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value="solution"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                  >
+                    <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
+                      Solution:
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3 md:pb-4 pt-0 text-base md:text-lg text-white">
                       Civic Seeds connects everyday parenting with civic development through practical frameworks with simple, 15-minute activities that families can do together to build these skills over time. Not abstract ideas, but activities incorporated into everyday life. That’s how busy people can begin to strengthen our communities from the ground up!
-                    </p>
-                  </div>
-                  <div className="rounded-2xl border shadow-lg bg-red p-3.5 md:p-4 flex flex-col text-left">
-                    <h3 className="text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata mb-1.5">Civic Seeds is for you if:</h3>
-                    <div className="space-y-2 text-base md:text-lg  text-white">
-                      <p>The tools taught in Power Parenting and Parent in Action help make your life easier in the home and in your community.</p>
-                      <ul className="list-disc list-outside pl-4 space-y-1">
-                        <li>You’re feeling overwhelmed or unsure in your parenting</li>
-                        <li>You’re struggling with your kids’ behavior, screens, or motivation</li>
-                        <li>You feel disconnected from your kids or your community</li>
-                        <li>You want to make a difference, but don’t know where to start</li>
-                        <li>You just want to raise good humans</li>
-                      </ul>
-                      <p>This guide isn’t about doing more; it’s about doing what matters. It helps you feel calmer and more connected, teach values that last, and raise children ready to lead, love, and contribute.</p>
-                      <p>Every lesson is designed to remind you that you have power and you’re already building a better future… one child, one home, one community, one moment at a time.</p>
-                    </div>
-                  </div>
-                  </div>
-                  <div
-                    className={`pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-12 bg-[linear-gradient(to_top,var(--color-blue),transparent)] transition-opacity duration-300 md:block ${whyMattersBottomFade ? 'opacity-100' : 'opacity-0'}`}
-                    aria-hidden="true"
-                  />
-                </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value="for-you"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                  >
+                    <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
+                      Civic Seeds is for you if:
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3 md:pb-4 pt-0 text-base md:text-lg text-white">
+                      <div className="space-y-2 text-base md:text-lg text-white">
+                        <p>The tools taught in Power Parenting and Parent in Action help make your life easier in the home and in your community.</p>
+                        <ul className="list-disc list-outside pl-4 space-y-1">
+                          <li>You’re feeling overwhelmed or unsure in your parenting</li>
+                          <li>You’re struggling with your kids’ behavior, screens, or motivation</li>
+                          <li>You feel disconnected from your kids or your community</li>
+                          <li>You want to make a difference, but don’t know where to start</li>
+                          <li>You just want to raise good humans</li>
+                        </ul>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem
+                    value="why-this-guide-matters"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                  >
+                    <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
+                      Why This Guide Matters:
+                    </AccordionTrigger>
+                    <AccordionContent className="pb-3 md:pb-4 pt-0 text-base md:text-lg text-white">
+                      <div className="space-y-2 text-base md:text-lg text-white">
+                        <p>This guide isn’t about doing more; it’s about doing what matters. It helps you feel calmer and more connected, teach values that last, and raise children ready to lead, love, and contribute.</p>
+                        <p>Every lesson is designed to remind you that you have power and you’re already building a better future... one child, one home, one community, one moment at a time.</p>
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               </div>
             </div>
           </div>
