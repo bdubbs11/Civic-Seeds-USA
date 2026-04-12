@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
-import LinkCard from '../components/LinkCard';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
 import { db } from '../../firebase';
 import { collection, query, where, getDocs, addDoc, Timestamp } from 'firebase/firestore';
@@ -270,29 +269,29 @@ function Home() {
         </svg>
       </div>
 
-         {/* Frameworks section */}
+      {/* Frameworks section */}
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-16 font-nunito">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
-            <div className="text-center md:text-left mt-12">
+            <div className="text-center md:text-left mt-12 mb-10 md:mb-12">
               <h1 className="text-3xl md:text-4xl 2xl:text-5xl font-bold mb-4 text-navy capitalize font-cantata">
                 The Frameworks
               </h1>
-              <p className="text-lg md:text-xl mb-6 leading-relaxed text-gray-700">
+              <p className="text-lg md:text-xl mb-0 leading-relaxed text-gray-700">
                 Our work centers around three practical frameworks designed to help families connect
                 everyday parenting with civic learning.
               </p>
             </div>
 
-          <div className="grid grid-cols-1 items-stretch gap-6 sm:grid-cols-2 lg:grid-cols-3 py-5 md:py-10 px-4 sm:px-6 md:px-0">
-            <div className="flex h-full justify-center">
-              <LinkCard
-                // to="/frameworks"
-                title="The UNIT Framework"
-                imageUrl="/images/gardening.jpg"
-                imageFit="fill"
-                description={
-                  <>
+            {/* Stacked cards: generous outer gap, ~⅔ text / ~⅓ image on 1 & 3, centered column on 2 */}
+            <div className="mx-auto flex max-w-5xl flex-col gap-8 px-1 py-6 sm:gap-10 sm:px-3 sm:py-8 md:gap-12 md:px-6 md:py-10 lg:max-w-6xl lg:px-8">
+              {/* Card 1: UNIT — image on the right (~⅓ width), portrait strip on md */}
+              <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:pl-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh] md:flex-row">
+                <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-7 lg:p-9">
+                  <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
+                    The UNIT Framework
+                  </h3>
+                  <div className="space-y-3 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
                     <p>
                       Families are the first place children experience cooperation, shared responsibility,
                       and the pursuit of the common good and common goals.
@@ -303,17 +302,26 @@ function Home() {
                       around them, but as active participants in it—growing power together, from home to
                       community to country.
                     </p>
-                  </>
-                }
-              />
-            </div>
+                  </div>
+                </div>
+                <div className="relative min-h-[14rem] w-full shrink-0 overflow-hidden sm:min-h-[15rem] md:w-[45%] p-6">
+                  <img
+                    src="/images/gardening.jpg"
+                    alt="Gardening together"
+                    className="h-full w-full md:min-h-full rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+              </div>
 
-            <div className="flex justify-center">
-              <LinkCard
-                // to="/frameworks"
-                title="Power Parenting"
-                description={
-                  <>
+              {/* Card 2: Power Parenting — text inset for balance like mock */}
+              <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:px-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh]">
+                <div className=" flex w-full flex-1 flex-col text-left justify-center gap-1.5 px-7 py-8 sm:px-10 sm:py-9 lg:px-14 lg:py-10">
+                  <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
+                    Power Parenting
+                  </h3>
+                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
                     <p>
                       Power Parenting focuses on 12 strategies within 4 pillars that help children develop the
                       skills and character needed to be thoughtful, powerful citizens.
@@ -322,30 +330,37 @@ function Home() {
                       The Power Parenting Pillars balance inner development with outer engagement. The four
                       pillars are:
                     </p>
-                    <ul className="list-disc list-inside space-y-1 mt-1">
+                    <ul className="mt-1 list-inside list-disc space-y-1">
                       <li>Character &amp; Core Values</li>
                       <li>Thinking Skills &amp; Understanding the World</li>
                       <li>Connection, Communication, &amp; Relationships</li>
                       <li>Capability, Accountability, &amp; Leadership</li>
                     </ul>
-                    <p className="mt-2">
+                    <p>
                       There are 3 power parenting strategies under each pillar and each strategy builds both
-                      personal strength and civic readiness. Together, they form a practical foundation that
-                      supports children’s wellbeing at home and prepares them to participate meaningfully in
-                      their communities and in our democracy.
+                      personal strength and civic readiness—forming a practical foundation that supports
+                      children’s wellbeing at home and prepares them to participate meaningfully in democracy.
                     </p>
-                  </>
-                }
-              />
-            </div>
+                  </div>
+                </div>
+              </div>
 
-            <div className="flex h-full justify-center">
-              <LinkCard
-                // to="/frameworks"
-                title="Parents in Action"
-                imageUrl="/images/capital.jpg"
-                description={
-                  <>
+              {/* Card 3: Parents in Action — image on the left (~⅓), mirrors card 1 */}
+              <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:pr-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh] md:flex-row">
+                <div className="relative min-h-[14rem] w-full shrink-0 overflow-hidden sm:min-h-[15rem] md:min-h-0 md:w-[35%] p-6">
+                  <img
+                    src="/images/capital.jpg"
+                    alt="Capital Building"
+                    className="h-full w-full  rounded-lg"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-7 lg:p-9">
+                  <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
+                    Parents in Action
+                  </h3>
+                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
                     <p>
                       Parents in Action helps families turn their values into meaningful community involvement,
                       showing children that even small actions can strengthen their communities.
@@ -359,14 +374,13 @@ function Home() {
                       The world is hard and we are tired. We don’t have time to save the world, but we do have
                       time to take small actions that add up to a big difference.
                     </p>
-                  </>
-                }
-              />
-            </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div className="text-center mt-4">
-              <p className="text-lg md:text-xl 2xl:text-2xl mb-6 leading-relaxed italic text-gray-700">
+            <div className="mt-10 text-center md:mt-12">
+              <p className="mb-6 text-lg leading-relaxed italic text-gray-700 md:text-xl 2xl:text-2xl">
                 Power Parenting and Parents in Action are two halves of one circle. What begins in the heart
                 of the home ripples outward into the heart of the community. And the lessons children learn
                 through teamwork, community service, and advocacy circle back home, reinforcing their sense of
@@ -375,7 +389,7 @@ function Home() {
               <img
                 src="/cslogo_revised.png"
                 alt="Civic Seeds logo"
-                className="w-40 h-40  md:w-64 md:h-64 mx-auto object-contain rounded-lg"
+                className="mx-auto h-20 w-20 rounded-lg object-contain md:h-24 md:w-24"
               />
             </div>
           </div>

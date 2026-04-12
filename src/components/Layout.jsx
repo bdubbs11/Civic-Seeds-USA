@@ -11,9 +11,9 @@ function Layout() {
           className="flex flex-row items-center gap-2 rounded text-xl text-navy hover:text-darkgreen duration-300 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 md:text-2xl"
         >
           <img
-            src="/cslogo_revised.png"
+            src="/logocropped.PNG"
             alt="Civic Seeds USA Logo"
-            className="h-15 w-15 md:h-20 md:w-20"
+            className="h-15 w-25 md:h-20 md:w-30"
           />
           Civic Seeds USA
         </Link>
