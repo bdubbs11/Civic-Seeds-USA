@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+// import { motion } from 'framer-motion';
+import { Quote } from 'lucide-react';
+// const MotionDiv = motion.div;
 import { Link } from 'react-router-dom';
 import TextRotator from '../components/TextRotator';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../components/ui/accordion';
@@ -9,6 +12,14 @@ function Home() {
   // email
   const [stayConnectedEmail, setStayConnectedEmail] = useState('');
   const [preorderResourcesEmail, setPreorderResourcesEmail] = useState('');
+
+  // Deitra note — re-enable with MotionDiv when adding site-wide motion
+  // const deitraNoteMotion = {
+  //   initial: { opacity: 0, y: 30 },
+  //   whileInView: { opacity: 1, y: 0 },
+  //   viewport: { once: true },
+  //   transition: { duration: 0.6 },
+  // };
 
   // handle form submit for email signup
   const handleSubmitEmailSignup = async (e) => {
@@ -134,7 +145,7 @@ function Home() {
                   </Link> */}
                   <Link
                     to="/schedule-services"
-                    className="bg-2red text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-darkgreen/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
+                    className="bg-dred text-white px-5 py-2.5 rounded-full text-sm md:text-base font-medium whitespace-nowrap hover:bg-dred/80 ease-in-out duration-300 cursor-pointer transition-transform hover:scale-[1.02]"
                   >
                     Book a Workshop
                   </Link>
@@ -180,7 +191,7 @@ function Home() {
                 <Accordion type="single" collapsible defaultValue="problem" className="w-full space-y-2.5 md:space-y-3">
                   <AccordionItem
                     value="problem"
-                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-dred px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
                     <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
                       The Problem:
@@ -192,7 +203,7 @@ function Home() {
 
                   <AccordionItem
                     value="insights"
-                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-dred px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
                     <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
                       Insights:
@@ -204,7 +215,7 @@ function Home() {
 
                   <AccordionItem
                     value="solution"
-                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-dred px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
                     <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
                       Solution:
@@ -216,7 +227,7 @@ function Home() {
 
                   <AccordionItem
                     value="for-you"
-                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-dred px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
                     <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
                       Civic Seeds is for you if:
@@ -237,7 +248,7 @@ function Home() {
 
                   <AccordionItem
                     value="why-this-guide-matters"
-                    className="rounded-2xl border border-white/15 shadow-lg bg-red px-3.5 md:px-4 data-[state=open]:pb-1"
+                    className="rounded-2xl border border-white/15 shadow-lg bg-dred px-3.5 md:px-4 data-[state=open]:pb-1"
                   >
                     <AccordionTrigger className="py-3 md:py-3.5 text-xl sm:text-2xl xl:text-3xl font-bold text-white font-cantata hover:no-underline">
                       Why This Guide Matters:
@@ -291,7 +302,7 @@ function Home() {
                   <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
                     The UNIT Framework
                   </h3>
-                  <div className="space-y-3 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
+                  <div className="space-y-3 text-sm leading-relaxed text-white/85 md:text-lg">
                     <p>
                       Families are the first place children experience cooperation, shared responsibility,
                       and the pursuit of the common good and common goals.
@@ -317,11 +328,11 @@ function Home() {
 
               {/* Card 2: Power Parenting — text inset for balance like mock */}
               <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:px-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh]">
-                <div className=" flex w-full flex-1 flex-col text-left justify-center gap-1.5 px-7 py-8 sm:px-10 sm:py-9 lg:px-14 lg:py-10">
+                <div className=" flex w-full flex-1 flex-col text-left justify-center gap-1.5 px-7 py-8 sm:px-10 sm:py-9 lg:px-14 lg:py-6">
                   <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
                     Power Parenting
                   </h3>
-                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
+                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-lg">
                     <p>
                       Power Parenting focuses on 12 strategies within 4 pillars that help children develop the
                       skills and character needed to be thoughtful, powerful citizens.
@@ -347,20 +358,20 @@ function Home() {
 
               {/* Card 3: Parents in Action — image on the left (~⅓), mirrors card 1 */}
               <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:pr-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh] md:flex-row">
-                <div className="relative min-h-[14rem] w-full shrink-0 overflow-hidden sm:min-h-[15rem] md:min-h-0 md:w-[35%] p-6">
+                <div className="relative min-h-[14rem] w-full shrink-0 overflow-hidden sm:min-h-[15rem] md:min-h-0 md:w-[35%] p-6 order-2 md:order-1">
                   <img
                     src="/images/capital.jpg"
                     alt="Capital Building"
-                    className="h-full w-full  rounded-lg"
+                    className="h-full w-full rounded-lg"
                     loading="lazy"
                     decoding="async"
                   />
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-7 lg:p-9">
+                <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-7 lg:p-9 order-1 md:order-2">
                   <h3 className="mb-1 font-cantata text-xl font-normal leading-tight text-white md:text-2xl">
                     Parents in Action
                   </h3>
-                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-[0.9375rem]">
+                  <div className="space-y-2.5 text-sm leading-relaxed text-white/85 md:text-lg">
                     <p>
                       Parents in Action helps families turn their values into meaningful community involvement,
                       showing children that even small actions can strengthen their communities.
@@ -450,7 +461,7 @@ function Home() {
               {/* Row 2: image | text — order must live on direct flex children, not nested wrappers */}
               <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 lg:gap-10">
                 <div className="order-2 md:order-1 mx-auto w-full max-w-lg shrink-0 md:mx-0 md:w-[min(100%,22rem)] lg:w-[min(100%,26rem)]">
-                  <div className="aspect-[16/9] w-full overflow-hidden rounded-xl border border-white/25 shadow-md">
+                  <div className=" w-full h-[55vh] overflow-hidden rounded-xl border border-white/25 shadow-md">
                     <img
                       src="/images/present.JPG"
                       alt="Deitra leading a workshop or presentation"
@@ -461,7 +472,7 @@ function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left order-1 md:order-2">
+                <div className="flex min-w-0 flex-1 flex-col gap-4 mt-8 md:mt-38 text-center md:text-left order-1 md:order-2">
                   <div className="space-y-3">
                     <p className="text-base md:text-lg font-semibold text-white">
                       Examples of Workshop Topics Include:
@@ -476,17 +487,24 @@ function Home() {
                   <p className="text-sm md:text-base leading-relaxed text-white">
                     These sessions provide practical strategies participants can start using immediately.
                   </p>
+                  <div className="mt-8 hidden justify-center md:mt-20 md:flex md:justify-start">
+                    <Link
+                      to="/schedule-services"
+                      className="inline-flex items-center justify-center rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-dred/80 hover:scale-[1.02]"
+                    >
+                      Invite Deitra to Speak
+                    </Link>
+                  </div>
+                </div>
+                <div className="order-3 flex mt-4 justify-center md:hidden">
+                  <Link
+                    to="/schedule-services"
+                    className="inline-flex items-center justify-center rounded-full bg-dred text-white px-6 py-2.5 text-sm font-medium shadow-sm transition-transform duration-200 hover:bg-dred/80 hover:scale-[1.02]"
+                  >
+                    Invite Deitra to Speak
+                  </Link>
                 </div>
               </div>
-
-              {/* <div className="mt-2 flex justify-center md:justify-start">
-                <Link
-                  to="/schedule-services"
-                  className="inline-flex items-center justify-center rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-darkgreen/80 hover:scale-[1.03]"
-                >
-                  Invite Deitra to Speak
-                </Link>
-              </div> */}
             </div>
           </div>
         </div>
@@ -506,22 +524,36 @@ function Home() {
       </div>
 
       {/* a note from deitra section */}
-      <div className="grid grid-cols-1 md:grid-cols-16 min-w-screen mx-auto py-12">
-        <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
-          <div className="flex flex-col md:flex-row items-stretch rounded-2xl border shadow-lg bg-red p-6 md:p-8">
-            <div className="flex-1 flex flex-col justify-center">
-              <h1 className="text-2xl md:text-3xl 2xl:text-4xl font-bold mb-4 text-white capitalize font-cantata">
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-red-600 to-red-700 p-8 shadow-2xl md:p-12">
+            <div className="absolute top-0 right-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+            <div className="absolute bottom-0 left-0 h-64 w-64 rounded-full bg-white/5 blur-3xl" />
+
+            <div className="relative z-10 text-left">
+              <Quote className="mb-6 h-12 w-12 text-white/30" aria-hidden="true" />
+              <h2 className="mb-6 font-cantata text-3xl font-bold capitalize text-white md:text-4xl">
                 A Note from Deitra
-              </h1>
-              <div className="space-y-3 text-base md:text-lg leading-relaxed text-white italic font-nunito">
-                <p>As a community health nurse, family and community policy analyst, educator, and parent of four children, I’ve spent years thinking about what helps families and communities thrive.</p>
-                <p>I believe parents have more influence than they realize. The everyday conversations, decisions, and values we share with our children shape not only their futures, but the future of our communities.</p> 
-                <p>Civic Seeds was created to help parents recognize that power and to offer practical ways to nurture the next generation of thoughtful, engaged citizens.</p>
+              </h2>
+              <div className="space-y-4 font-nunito text-lg italic leading-relaxed text-white/95 md:text-xl">
+                <p>
+                  As a community health nurse, family and community policy analyst, educator, and parent of four
+                  children, I’ve spent years thinking about what helps families and communities thrive.
+                </p>
+                <p>
+                  I believe parents have more influence than they realize. The everyday conversations,
+                  decisions, and values we share with our children shape not only their futures, but the future of
+                  our communities.
+                </p>
+                <p>
+                  Civic Seeds was created to help parents recognize that power and to offer practical ways to
+                  nurture the next generation of thoughtful, engaged citizens.
+                </p>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
       {/* resources for families section */}
       <div className="w-full text-white py-16 px-4 md:px-8 mt-12">
@@ -583,7 +615,7 @@ function Home() {
                   />
                   <button
                     type="submit"
-                    className="flex-shrink-0 rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                    className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
                   >
                     Interested in pre-order
                   </button>
@@ -646,7 +678,7 @@ function Home() {
                 />
                 <button
                   type="submit"
-                  className="flex-shrink-0 rounded-full bg-red text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                  className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
                 >
                   Sign up
                 </button>

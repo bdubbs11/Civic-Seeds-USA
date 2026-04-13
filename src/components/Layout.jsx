@@ -4,7 +4,7 @@ import { Outlet, Link } from 'react-router-dom';
 function Layout() {
   return (
     <div className="flex min-h-screen flex-col overflow-x-hidden font-nunito text-black">
-      <nav className="my-auto flex w-full flex-row items-center justify-start border-b border-black-200 px-3 py-2 md:justify-between md:p-4 md:px-6">
+      <nav className="my-auto flex w-full flex-row items-center justify-between border-b border-black-200 px-3 py-2 md:p-4 md:px-6">
         <Link
           to="/"
           aria-label="Go to home"
@@ -15,10 +15,10 @@ function Layout() {
             alt="Civic Seeds USA Logo"
             className="h-15 w-25 md:h-20 md:w-30"
           />
-          Civic Seeds USA
+          <span className="hidden md:inline">Civic Seeds USA</span>
         </Link>
 
-        <div className="flex flex-row gap-1 text-base text-navy md:gap-4 md:text-lg">
+        <div className="flex flex-row gap-2 text-base text-navy md:gap-4 md:text-lg">
           <Link className="hover:text-darkgreen duration-300 ease-in-out" to="/schedule-services">
             Schedule Services
           </Link>
