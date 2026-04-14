@@ -106,7 +106,7 @@ function Home() {
 
 // try and see if i can set up database to track interested in preorder
   return (
-    <div className="flex flex-col flex-1 min-h-screen">
+    <div id="home" className="flex min-h-screen flex-1 flex-col">
       {/* Hero section */}
       <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-16">
@@ -295,7 +295,7 @@ function Home() {
             </div>
 
             {/* Stacked cards: generous outer gap, ~⅔ text / ~⅓ image on 1 & 3, centered column on 2 */}
-            <div className="mx-auto flex max-w-5xl flex-col gap-8 px-1 py-6 sm:gap-10 sm:px-3 sm:py-8 md:gap-12 md:px-6 md:py-10 lg:max-w-6xl lg:px-8">
+            <div className="mx-auto flex max-w-5xl flex-col gap-8 px-1 py-6 sm:gap-10 sm:px-3 sm:py-8 md:gap-12 md:px-6 md:py-10 lg:max-w-6xl 2xl:max-w-[90rem] lg:px-8">
               {/* Card 1: UNIT — image on the right (~⅓ width), portrait strip on md */}
               <div className="flex min-h-[30vh] flex-col items-stretch overflow-hidden text-left px-0 md:pl-14 rounded-2xl bg-dred shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] transition-transform duration-300 hover:-translate-y-1 md:h-[55vh] md:flex-row">
                 <div className="flex min-w-0 flex-1 flex-col justify-center gap-1.5 p-7 lg:p-9">
@@ -419,12 +419,12 @@ function Home() {
           <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
-      <div className="w-full bg-blue py-16 px-4 md:px-8 mt-0">
-        <div className="grid grid-cols-1 md:grid-cols-16 w-full md:min-w-screen max-w-6xl mx-auto">
+      <div id="work-with-us" className="scroll-mt-24 mt-0 w-full bg-blue px-4 py-16 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-16 w-full max-w-8xl mx-auto">
           <div className="col-start-1 md:col-start-2 col-span-1 md:col-span-14 px-4 md:px-0">
             <div className="flex flex-col gap-10 md:gap-12 lg:gap-14 font-nunito">
               {/* Row 1: text | image */}
-              <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-8 lg:gap-10">
+              <div className="flex flex-col md:flex-row md:items-stretch gap-6 md:gap-8 lg:gap-10">
                 <div className="flex min-w-0 flex-1 flex-col gap-4 text-center md:text-left">
                   <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-bold leading-snug text-white font-cantata">
                     Work with Deitra
@@ -472,22 +472,24 @@ function Home() {
                     />
                   </div>
                 </div>
-                <div className="flex min-w-0 flex-1 flex-col gap-4 mt-8 md:mt-38 text-center md:text-left order-1 md:order-2">
-                  <div className="space-y-3">
-                    <p className="text-base md:text-lg font-semibold text-white">
-                      Examples of Workshop Topics Include:
+                <div className="order-1 flex min-w-0 flex-1 flex-col gap-4 text-center md:order-2 md:min-h-[55vh] md:justify-between md:text-left">
+                  <div className="flex flex-col gap-4 md:flex-1 md:justify-center">
+                    <div className="space-y-3">
+                      <p className="text-base md:text-lg font-semibold text-white">
+                        Examples of Workshop Topics Include:
+                      </p>
+                      <ul className="list-disc list-inside space-y-1.5 text-white text-sm md:text-base">
+                        <li>Quarter Hour of Power: Civic Learning in Everyday Life</li>
+                        <li>
+                          Choosing Your Family Values: Creating Standards, Rules, and Traditions that Match Them
+                        </li>
+                      </ul>
+                    </div>
+                    <p className="text-sm md:text-base leading-relaxed text-white">
+                      These sessions provide practical strategies participants can start using immediately.
                     </p>
-                    <ul className="list-disc list-inside space-y-1.5 text-white text-sm md:text-base">
-                      <li>Quarter Hour of Power: Civic Learning in Everyday Life</li>
-                      <li>
-                        Choosing Your Family Values: Creating Standards, Rules, and Traditions that Match Them
-                      </li>
-                    </ul>
                   </div>
-                  <p className="text-sm md:text-base leading-relaxed text-white">
-                    These sessions provide practical strategies participants can start using immediately.
-                  </p>
-                  <div className="mt-8 hidden justify-center md:mt-20 md:flex md:justify-start">
+                  <div className="mt-8 hidden justify-center md:mt-auto md:flex md:justify-start">
                     <Link
                       to="/schedule-services"
                       className="inline-flex items-center justify-center rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium shadow-sm transition-transform duration-200 hover:bg-dred/80 hover:scale-[1.02]"
@@ -615,7 +617,7 @@ function Home() {
                   />
                   <button
                     type="submit"
-                    className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                    className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-transform duration-200 hover:bg-dred/80 hover:scale-[1.02]"
                   >
                     Interested in pre-order
                   </button>
@@ -638,7 +640,7 @@ function Home() {
           <path d="M1000 100C500 100 500 4 0 4V0h1000v100Z" fill="#3664F2" />
         </svg>
       </div>
-      <div className="w-full py-12 md:py-16 bg-blue">
+      <div id="contact" className="scroll-mt-24 w-full bg-blue py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-16 w-full max-w-6xl mx-auto px-4 md:px-0 items-center">
           <div className="col-span-1 md:col-span-6 flex justify-center md:justify-start">
             <img
@@ -678,7 +680,7 @@ function Home() {
                 />
                 <button
                   type="submit"
-                  className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-colors hover:bg-darkgreen/80 focus:outline-none focus:ring-2 focus:ring-darkgreen focus:ring-offset-2"
+                  className="flex-shrink-0 rounded-full bg-dred text-white px-6 py-2.5 text-sm md:text-base font-medium whitespace-nowrap transition-transform duration-200 hover:bg-dred/80 hover:scale-[1.02]"
                 >
                   Sign up
                 </button>
