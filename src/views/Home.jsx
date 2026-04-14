@@ -43,14 +43,14 @@ function Home() {
         email: emailLower,
         createdAt: Timestamp.now(),
       });
-      // await sendUniversalSubmission({
-      //   type: 'Newsletter Signup',
-      //   user_email: emailLower,
-      //   first_name: '',
-      //   last_name: '',
-      //   subject: '',
-      //   message: 'User subscribed to updates',
-      // });
+      await sendUniversalSubmission({
+        type: 'Newsletter Signup',
+        user_email: emailLower,
+        first_name: '',
+        last_name: '',
+        subject: '',
+        message: 'User subscribed to updates',
+      });
 
       setStayConnectedEmail('');
       alert('Thank you for signing up!');
@@ -82,14 +82,14 @@ function Home() {
         email: emailLower,
         createdAt: Timestamp.now(),
       });
-      // await sendUniversalSubmission({
-      //   type: 'Preorder Resource',
-      //   user_email: emailLower,
-      //   first_name: '',
-      //   last_name: '',
-      //   subject: 'Preorder Request',
-      //   message: 'User requested preorder resource',
-      // });
+      await sendUniversalSubmission({
+        type: 'Preorder Resource',
+        user_email: emailLower,
+        first_name: '',
+        last_name: '',
+        subject: 'Preorder Request',
+        message: 'User requested preorder resource',
+      });
 
       setPreorderResourcesEmail('');
       alert('Thank you for signing up!');

@@ -38,14 +38,14 @@ function Contact() {
         email: emailLower,
         createdAt: Timestamp.now(),
       });
-      // await sendUniversalSubmission({
-      //   type: 'Newsletter Signup',
-      //   user_email: emailLower,
-      //   first_name: '',
-      //   last_name: '',
-      //   subject: '',
-      //   message: 'User subscribed to updates',
-      // });
+      await sendUniversalSubmission({
+        type: 'Newsletter Signup',
+        user_email: emailLower,
+        first_name: '',
+        last_name: '',
+        subject: '',
+        message: 'User subscribed to updates',
+      });
 
       setNewsletterEmail('');
       alert('Thank you for signing up!');
