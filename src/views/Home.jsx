@@ -119,14 +119,19 @@ function Home() {
                   Inspiring the next generation to{" "}
                   <TextRotator
                     words={[
-                      "dream big",
-                      "work hard",
-                      "lead with courage",
-                      "serve their community",
-                      "believe in America's story",
+                      // "dream big",
+                      // "work hard",
+                      // "lead with courage",
+                      // "serve their community",
+                      // "believe in America's story",
+                      "think critically and care deeply.",
+                      "lead with courage and compassion.",
+                      "serve their communities with purpose.",
+                      "use their voice to make a difference.",
+                      "build a stronger future for everyone.",
                     ]}
                     interval={2500}
-                    className="text-darkgreen font-bold text-[1.1em] md:text-[1.15em]"
+                    className="inline-block whitespace-nowrap text-darkgreen font-bold text-[1.1em] md:text-[1.15em]"
                   />
                 </h1>
                 <div className="space-y-3 text-base md:text-lg leading-relaxed text-gray-700 font-nunito">
@@ -341,7 +346,7 @@ function Home() {
                       The Power Parenting Pillars balance inner development with outer engagement. The four
                       pillars are:
                     </p>
-                    <ul className="mt-1 list-inside list-disc space-y-1">
+                    <ul className="mt-1 list-inside list-disc space-y-1 font-bold italic">
                       <li>Character &amp; Core Values</li>
                       <li>Thinking Skills &amp; Understanding the World</li>
                       <li>Connection, Communication, &amp; Relationships</li>

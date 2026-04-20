@@ -6,6 +6,10 @@ export default function TextRotator({
   className = "",
 }) {
   const [index, setIndex] = useState(0);
+  const longestWord = words.reduce(
+    (longest, word) => (word.length > longest.length ? word : longest),
+    "",
+  );
 
   useEffect(() => {
     if (words.length === 0) return;
@@ -19,10 +23,11 @@ export default function TextRotator({
   if (words.length === 0) return null;
 
   return (
-    <span className={`relative inline-block overflow-hidden align-bottom ${className}`}>
+    <span className={`relative inline-grid align-bottom ${className}`}>
+      <span className="invisible whitespace-nowrap">{longestWord}</span>
       <span
         key={index}
-        className="inline-block animate-fade-slide"
+        className="absolute left-0 top-0 inline-block animate-fade-slide whitespace-nowrap"
       >
         {words[index]}
       </span>
